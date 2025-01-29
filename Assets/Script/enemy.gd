@@ -1,6 +1,7 @@
 class_name Enemy extends Area2D
 
 signal killed(points)
+signal hit
 
 @export var speed = 150
 @export var durability = 20
@@ -27,3 +28,5 @@ func take_damage(amount):
 	if durability <= 0:
 		killed.emit(points)
 		die()
+	else:
+		hit.emit()

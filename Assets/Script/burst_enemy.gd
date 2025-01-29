@@ -1,6 +1,7 @@
 class_name Burstenemy extends Area2D
 
 signal killed(points)
+signal hit
 
 @export var speed = 350
 @export var durability = 10
@@ -27,3 +28,5 @@ func take_damage(amount):
 	if durability <= 0:
 		killed.emit(points)
 		die()
+	else:
+		hit.emit()
