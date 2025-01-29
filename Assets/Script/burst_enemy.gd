@@ -1,5 +1,6 @@
 class_name Burstenemy extends Area2D
 
+
 signal killed(points)
 signal hit
 

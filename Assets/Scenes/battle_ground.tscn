@@ -65,6 +65,8 @@ position = Vector2(261, 839)
 [node name="BulletContainer" type="Node2D" parent="."]
 position = Vector2(0, -30)
 
+[node name="EnemyBulletContainer" type="Node2D" parent="."]
+
 [node name="EnemyContainer" type="Node2D" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

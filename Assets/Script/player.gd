@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 func shoot():
 	bullet_shot.emit(bullet_scene, muzzle.global_position)
 
-func die():
+func die() -> void:
 	killed.emit()
 	$AnimatedSprite2D.play("explode_animation")
 	await get_tree().create_timer(0.1).timeout

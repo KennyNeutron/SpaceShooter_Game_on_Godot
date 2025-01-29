@@ -26,7 +26,7 @@ grow_vertical = 2
 script = ExtResource("1_vnmwm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(134.5, 30.25)
+position = Vector2(129, 30)
 scale = Vector2(0.789634, 0.922222)
 texture = ExtResource("2_s6x28")
 
@@ -41,7 +41,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Sprite2D" parent="."]
-position = Vector2(117, 83)
+position = Vector2(106, 82)
 scale = Vector2(0.643293, 0.883333)
 texture = ExtResource("4_v372c")
 

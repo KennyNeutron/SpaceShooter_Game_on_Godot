@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var player_spawn = $PlayerSpawnpoint
 @onready var bullet_container = $BulletContainer
+@onready var enemybullet_container = $EnemyBulletContainer
 @onready var timer = $EnemySpawnpoint
 @onready var enemy_container = $EnemyContainer
 @onready var hud = $UILayer/HUD
