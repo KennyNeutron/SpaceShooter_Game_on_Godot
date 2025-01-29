@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlp0fpk14a5eg"]
+
+[ext_resource type="Script" path="res://Assets/Script/hud.gd" id="1_vnmwm"]
+[ext_resource type="Texture2D" uid="uid://dvxsde3eqy" path="res://Assets/Art/Another Art/scoreUIBg.png" id="2_s6x28"]
+[ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="3_yyn8i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x3lds"]
+font = ExtResource("3_yyn8i")
+font_size = 32
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vnmwm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(169, 32)
+texture = ExtResource("2_s6x28")
+
+[node name="Score" type="Label" parent="Sprite2D"]
+offset_left = 7.0
+offset_top = -20.0
+offset_right = 123.0
+offset_bottom = 19.0
+text = "9999999"
+label_settings = SubResource("LabelSettings_x3lds")
+horizontal_alignment = 1
+vertical_alignment = 1
