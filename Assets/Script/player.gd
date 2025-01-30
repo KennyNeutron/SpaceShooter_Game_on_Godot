@@ -4,6 +4,8 @@ signal bullet_shot(bullet_scene, location)
 signal killed
 signal stop
 signal addlife
+signal missiles
+signal firewall
 
 @export var speed = 300
 @export var shoot_per_sec := 0.3
@@ -41,3 +43,9 @@ func die() -> void:
 
 func life(recover) -> void:
 	addlife.emit(recover)
+
+func spawn_missile():
+	missiles.emit()
+
+func spawn_firewallcanon():
+	firewall.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbhfgknblto0f"]
+[gd_scene load_steps=16 format=3 uid="uid://dbhfgknblto0f"]
 
 [ext_resource type="Script" path="res://Assets/Script/battle_ground.gd" id="1_wpbp7"]
 [ext_resource type="PackedScene" uid="uid://dctivcvvd5cq6" path="res://Assets/Scenes/player.tscn" id="2_flekx"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b07wldsnggcrx" path="res://Assets/Art/speed.png" id="6_gnapi"]
 [ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="7_2tcpd"]
 [ext_resource type="PackedScene" uid="uid://dfska7dy1dpl" path="res://Assets/Scenes/medkit.tscn" id="12_kfy37"]
+[ext_resource type="PackedScene" uid="uid://buybniq47hboo" path="res://Assets/Scenes/antivirus_power_up.tscn" id="13_gpu2a"]
+[ext_resource type="PackedScene" uid="uid://c11qbunq71agu" path="res://Assets/Scenes/firewall_power_ups.tscn" id="14_aqgjs"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u5s56"]
 particle_flag_disable_z = true
@@ -70,6 +72,8 @@ position = Vector2(0, -30)
 
 [node name="EnemyContainer" type="Node2D" parent="."]
 
+[node name="PowerUpContainer" type="Node2D" parent="."]
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -82,6 +86,12 @@ centered = false
 region_rect = Rect2(0, 0, 540, 960)
 
 [node name="Medkit" parent="." instance=ExtResource("12_kfy37")]
-position = Vector2(310, 175)
+position = Vector2(327, 231)
+
+[node name="AntivirusPowerUp" parent="." instance=ExtResource("13_gpu2a")]
+position = Vector2(307, -35)
+
+[node name="FirewallPowerUps" parent="." instance=ExtResource("14_aqgjs")]
+position = Vector2(144, 341)
 
 [connection signal="timeout" from="EnemySpawnpoint" to="." method="_on_enemy_spawnpoint_timeout"]

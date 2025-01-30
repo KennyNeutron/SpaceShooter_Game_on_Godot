@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=3 uid="uid://dbhfgknblto0f"]
+
+[ext_resource type="Script" path="res://Assets/Script/battle_ground.gd" id="1_wpbp7"]
+[ext_resource type="PackedScene" uid="uid://dctivcvvd5cq6" path="res://Assets/Scenes/player.tscn" id="2_flekx"]
+[ext_resource type="PackedScene" uid="uid://xv3roen1j42f" path="res://Assets/Scenes/enemy.tscn" id="3_1ly5k"]
+[ext_resource type="PackedScene" uid="uid://dlp0fpk14a5eg" path="res://Assets/Scenes/hud.tscn" id="4_bi3dm"]
+[ext_resource type="AudioStream" uid="uid://bij2pe0pib1wh" path="res://Assets/Resources/audio/laser.ogg" id="4_g1uli"]
+[ext_resource type="PackedScene" uid="uid://bvdb1k8q1125e" path="res://Assets/Scenes/burst_enemy.tscn" id="4_v1h16"]
+[ext_resource type="PackedScene" uid="uid://b1nqawclvaxha" path="res://Assets/Scenes/game_over_screen.tscn" id="5_7r8yv"]
+[ext_resource type="AudioStream" uid="uid://vufwlp7xv6x2" path="res://Assets/Resources/audio/hit.wav" id="5_xfhrd"]
+[ext_resource type="AudioStream" uid="uid://c7qsraxn3cqmp" path="res://Assets/Resources/audio/explode.wav" id="6_04a1p"]
+[ext_resource type="Texture2D" uid="uid://b07wldsnggcrx" path="res://Assets/Art/speed.png" id="6_gnapi"]
+[ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="7_2tcpd"]
+[ext_resource type="PackedScene" uid="uid://dfska7dy1dpl" path="res://Assets/Scenes/medkit.tscn" id="12_kfy37"]
+[ext_resource type="PackedScene" uid="uid://buybniq47hboo" path="res://Assets/Scenes/antivirus_power_up.tscn" id="13_gpu2a"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u5s56"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(270, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -1000.0
+initial_velocity_max = -1000.0
+gravity = Vector3(0, 0, 0)
+
+[node name="BattleGround" type="Node2D"]
+script = ExtResource("1_wpbp7")
+enemy_spaceship_scene = Array[PackedScene]([ExtResource("3_1ly5k"), ExtResource("4_v1h16")])
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="BulletSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_g1uli")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("5_xfhrd")
+
+[node name="ExplodeSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_04a1p")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UILayer" instance=ExtResource("4_bi3dm")]
+
+[node name="GameOverScreen" parent="UILayer" instance=ExtResource("5_7r8yv")]
+visible = false
+
+[node name="SpeedParticleEffect" type="GPUParticles2D" parent="."]
+position = Vector2(270, -50)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_u5s56")
+texture = ExtResource("6_gnapi")
+lifetime = 1.25
+preprocess = 5.0
+
+[node name="EnemySpawnpoint" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Player" parent="." instance=ExtResource("2_flekx")]
+position = Vector2(440, 572)
+
+[node name="PlayerSpawnpoint" type="Marker2D" parent="."]
+position = Vector2(261, 839)
+
+[node name="BulletContainer" type="Node2D" parent="."]
+position = Vector2(0, -30)
+
+[node name="EnemyBulletContainer" type="Node2D" parent="."]
+
+[node name="EnemyContainer" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="CyberpunkWorld" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 1
+scale = Vector2(1.084, 3.72667)
+texture = ExtResource("7_2tcpd")
+centered = false
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="Medkit" parent="." instance=ExtResource("12_kfy37")]
+position = Vector2(327, 231)
+
+[node name="AntivirusPowerUp" parent="." instance=ExtResource("13_gpu2a")]
+position = Vector2(283, 587)
+
+[connection signal="timeout" from="EnemySpawnpoint" to="." method="_on_enemy_spawnpoint_timeout"]

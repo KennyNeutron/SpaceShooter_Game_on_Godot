@@ -1,6 +1,5 @@
 class_name Burstenemy extends Area2D
 
-
 signal killed(points)
 signal hit
 
@@ -26,8 +25,8 @@ func _on_body_entered(body: Node2D) -> void:
 			body.die()
 			queue_free()
 
-func take_damage(amount):
-	durability -= amount
+func take_damage(damage):
+	durability -= damage
 	if durability <= 0:
 		killed.emit(points)
 		die()

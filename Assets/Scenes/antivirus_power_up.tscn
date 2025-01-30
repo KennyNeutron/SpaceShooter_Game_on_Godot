@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://buybniq47hboo"]
+
+[ext_resource type="Texture2D" uid="uid://bmwfu4741qe5t" path="res://Assets/MissilePack/etool_1738254383037.png" id="1_fg4kp"]
+[ext_resource type="Script" path="res://Assets/Script/antivirus_power_up.gd" id="1_yy8lk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lypea"]
+radius = 16.5097
+height = 85.7625
+
+[node name="AntivirusPowerUp" type="Area2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_yy8lk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -4.76837e-07)
+rotation = 3.83972
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("1_fg4kp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+rotation = 2.26893
+shape = SubResource("CapsuleShape2D_lypea")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -50)
+scale = Vector2(0.65, 0.7)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

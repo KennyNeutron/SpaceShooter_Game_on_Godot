@@ -1,10 +1,13 @@
 extends Node2D
 
 @export var enemy_spaceship_scene: Array[PackedScene] = []
+@export var missile_scene: PackedScene = preload("res://Assets/Scenes/antivirus_missle.tscn")
+@export var firewall_scene: PackedScene = preload("res://Assets/Scenes/firewall_canon.tscn")
 
 @onready var player_spawn = $PlayerSpawnpoint
 @onready var bullet_container = $BulletContainer
 @onready var enemybullet_container = $EnemyBulletContainer
+@onready var powerup_container = $PowerUpContainer
 @onready var timer = $EnemySpawnpoint
 @onready var enemy_container = $EnemyContainer
 @onready var hud = $UILayer/HUD
@@ -74,7 +77,7 @@ func quit_and_reset(delta):
 		get_tree().reload_current_scene()
 	
 	if timer.wait_time > 0.5:
-		timer.wait_time -= delta * 0.005
+		timer.wait_time -= delta * 0.05
 	elif timer.wait_time < 0.5:
 		timer.wait_time = 0.5
 
@@ -93,6 +96,8 @@ func player_data():
 	player.bullet_shot.connect(player_bullet_shot)
 	player.killed.connect(player_killed)
 	player.addlife.connect(add_life)
+	player.missiles.connect(spawn_missiles)
+	player.firewall.connect(firewall_canons)
 	player.stop.connect(stop)
 
 func add_life(recover: int) -> void:
@@ -109,6 +114,23 @@ func time_start(delta):
 
 func health_label():
 	playerhp_label.text = str(autoload.lives)
+
+func spawn_missiles():
+	call_deferred("player_spawn_missile")
+
+func player_spawn_missile():
+	var missile = missile_scene.instantiate()
+	missile.global_position = Vector2(randf_range(50, 500), 970) 
+	powerup_container.add_child(missile)
+
+func firewall_canons():
+	call_deferred("player_spawn_firewallcanon")
+
+func player_spawn_firewallcanon():
+	for i in range(10):
+		var firewall = firewall_scene.instantiate()
+		firewall.global_position = Vector2(randf_range(50, 500), 960)
+		powerup_container.add_child(firewall)
 
 func stop():
 	set_process(false)

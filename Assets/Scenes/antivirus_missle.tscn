@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://dt8c2ku5ljoa7"]
+
+[ext_resource type="Script" path="res://Assets/Script/antivirus_missle.gd" id="1_0hgr8"]
+[ext_resource type="Texture2D" uid="uid://bmwfu4741qe5t" path="res://Assets/MissilePack/etool_1738254383037.png" id="2_2t2ei"]
+[ext_resource type="Texture2D" uid="uid://cal4jnfosx78l" path="res://Assets/Art/Another Art/explosion.png" id="3_pwhik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4p1l"]
+atlas = ExtResource("2_2t2ei")
+region = Rect2(0, 0, 1024, 672)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oghmc"]
+atlas = ExtResource("3_pwhik")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r8xa"]
+atlas = ExtResource("3_pwhik")
+region = Rect2(480, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_putvv"]
+atlas = ExtResource("3_pwhik")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgk8x"]
+atlas = ExtResource("3_pwhik")
+region = Rect2(360, 120, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87pk7"]
+atlas = ExtResource("3_pwhik")
+region = Rect2(480, 120, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gnmh"]
+atlas = ExtResource("3_pwhik")
+region = Rect2(0, 240, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8b3a"]
+atlas = ExtResource("3_pwhik")
+region = Rect2(120, 240, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cag7g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4p1l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oghmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r8xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_putvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgk8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87pk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gnmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8b3a")
+}],
+"loop": true,
+"name": &"explosive_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0p8gj"]
+radius = 205.543
+
+[node name="AntivirusMissle" type="Area2D"]
+position = Vector2(251, 242)
+collision_layer = 64
+collision_mask = 10
+script = ExtResource("1_0hgr8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.19209e-07, 1.90735e-06)
+rotation = 4.71239
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_cag7g")
+autoplay = "default"
+frame_progress = 0.0160049
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_0p8gj")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

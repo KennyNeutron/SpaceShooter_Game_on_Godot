@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c11qbunq71agu"]
+
+[ext_resource type="Script" path="res://Assets/Script/firewall_power_ups.gd" id="1_1msly"]
+[ext_resource type="Texture2D" uid="uid://dpnomlb0lx3jv" path="res://Assets/Art/Another Art/flame.png" id="1_blsxe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nwau5"]
+radius = 76.7391
+
+[node name="FirewallPowerUps" type="Area2D"]
+position = Vector2(236, 346)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_1msly")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_blsxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.33338, 6.66667)
+shape = SubResource("CircleShape2D_nwau5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -133.333)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

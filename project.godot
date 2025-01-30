@@ -73,8 +73,9 @@ shoot={
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="bullet"
 2d_physics/layer_4="burst_enemy"
-2d_physics/layer_5="enemy_bullet"
+2d_physics/layer_5="firewall_canon"
 2d_physics/layer_6="medkit"
+2d_physics/layer_7="antivirus_missle"
 
 [rendering]
 
