@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfska7dy1dpl"]
+
+[ext_resource type="Texture2D" uid="uid://bssajx12tn8kc" path="res://Assets/Art/etool_1738240392111.png" id="1_awb4u"]
+[ext_resource type="Script" path="res://Assets/Script/medkit.gd" id="1_tb4vk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vwac"]
+size = Vector2(22, 16)
+
+[node name="Medkit" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_tb4vk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_awb4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_0vwac")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -20)
+scale = Vector2(0.475, 0.3625)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

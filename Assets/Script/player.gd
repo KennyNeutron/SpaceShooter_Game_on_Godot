@@ -3,6 +3,7 @@ class_name Player extends CharacterBody2D
 signal bullet_shot(bullet_scene, location)
 signal killed
 signal stop
+signal addlife
 
 @export var speed = 300
 @export var shoot_per_sec := 0.3
@@ -37,3 +38,6 @@ func die() -> void:
 	await get_tree().create_timer(0.1).timeout
 	queue_free()
 	stop.emit()
+
+func life(recover) -> void:
+	addlife.emit(recover)

@@ -23,6 +23,8 @@ var high_score
 @onready var time_label = $UILayer/HUD/Timer/time
 var time = 0.0
 
+@onready var playerhp_label = $UILayer/HUD/PlayerHp/playerhp
+
 func _ready() -> void:
 	player_data()
 
@@ -30,16 +32,9 @@ func save_game_data():
 	var savefile_data = FileAccess.open("user://save.data", FileAccess.WRITE)
 	savefile_data.store_32(high_score)
 
-func _process(delta: float) -> void:
-	time += delta
-	var total_seconds = int(time)
-	
-	@warning_ignore("integer_division")
-	var minutes = (total_seconds % 3600) / 60
-	var seconds = total_seconds % 60
-	
-	time_label.text = "%02d:%02d" % [minutes, seconds]
-	
+func _process(delta):
+	health_label()
+	time_start(delta)
 	quit_and_reset(delta)
 
 func player_bullet_shot(bullet_scene, location):
@@ -97,7 +92,23 @@ func player_data():
 	player.global_position = player_spawn.global_position
 	player.bullet_shot.connect(player_bullet_shot)
 	player.killed.connect(player_killed)
+	player.addlife.connect(add_life)
 	player.stop.connect(stop)
+
+func add_life(recover: int) -> void:
+	autoload.lives += recover
+
+func time_start(delta):
+	time += delta
+	var total_seconds = int(time)
+	@warning_ignore("integer_division")
+	var minutes = (total_seconds % 3600) / 60
+	var seconds = total_seconds % 60
+	
+	time_label.text = "%02d:%02d" % [minutes, seconds]
+
+func health_label():
+	playerhp_label.text = str(autoload.lives)
 
 func stop():
 	set_process(false)

@@ -21,8 +21,10 @@ func die():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.die()
-		queue_free()
+		autoload.lives -= 1
+		if autoload.lives <= 0:
+			body.die()
+			queue_free()
 
 func take_damage(amount):
 	durability -= amount

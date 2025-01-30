@@ -15,6 +15,10 @@ run/main_scene="res://Assets/Scenes/battle_ground.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+autoload="*res://Assets/Global Script/global_script.gd"
+
 [display]
 
 window/size/viewport_width=540
@@ -70,6 +74,7 @@ shoot={
 2d_physics/layer_3="bullet"
 2d_physics/layer_4="burst_enemy"
 2d_physics/layer_5="enemy_bullet"
+2d_physics/layer_6="medkit"
 
 [rendering]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlp0fpk14a5eg"]
+[gd_scene load_steps=9 format=3 uid="uid://dlp0fpk14a5eg"]
 
 [ext_resource type="Script" path="res://Assets/Script/hud.gd" id="1_vnmwm"]
 [ext_resource type="Texture2D" uid="uid://dvxsde3eqy" path="res://Assets/Art/Another Art/scoreUIBg.png" id="2_s6x28"]
 [ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="3_yyn8i"]
 [ext_resource type="Texture2D" uid="uid://bi3spkexm8lmi" path="res://Assets/Art/Another Art/timeUIBg.png" id="4_v372c"]
+[ext_resource type="Texture2D" uid="uid://bcwjvl7s15wiy" path="res://Assets/Art/Another Art/livesUIBg.png" id="5_w0g5s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x3lds"]
 font = ExtResource("3_yyn8i")
@@ -15,6 +16,14 @@ shadow_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_83taw"]
 font = ExtResource("3_yyn8i")
 font_size = 35
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_noalo"]
+font = ExtResource("3_yyn8i")
+font_size = 36
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -26,7 +35,7 @@ grow_vertical = 2
 script = ExtResource("1_vnmwm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(129, 30)
+position = Vector2(136, 33)
 scale = Vector2(0.789634, 0.922222)
 texture = ExtResource("2_s6x28")
 
@@ -41,7 +50,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Sprite2D" parent="."]
-position = Vector2(106, 82)
+position = Vector2(111, 80)
 scale = Vector2(0.643293, 0.883333)
 texture = ExtResource("4_v372c")
 
@@ -52,5 +61,20 @@ offset_right = 114.109
 offset_bottom = 17.1509
 text = "00:00"
 label_settings = SubResource("LabelSettings_83taw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHp" type="Sprite2D" parent="."]
+position = Vector2(97, 132)
+scale = Vector2(0.643382, 0.696429)
+texture = ExtResource("5_w0g5s")
+
+[node name="playerhp" type="Label" parent="PlayerHp"]
+offset_left = 79.2686
+offset_top = -17.2307
+offset_right = 99.2686
+offset_bottom = 12.7693
+text = "5"
+label_settings = SubResource("LabelSettings_noalo")
 horizontal_alignment = 1
 vertical_alignment = 1
