@@ -22,8 +22,11 @@ autoload="*res://Assets/Global Script/global_script.gd"
 [display]
 
 window/size/viewport_width=540
-window/size/viewport_height=960
-window/stretch/mode="canvas_items"
+window/size/viewport_height=1028
+window/size/mode=3
+window/size/initial_position_type=2
+window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [input]
 
@@ -94,3 +97,4 @@ pointing/emulate_mouse_from_touch=false
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

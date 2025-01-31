@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1nqawclvaxha"]
+[gd_scene load_steps=9 format=3 uid="uid://b1nqawclvaxha"]
 
 [ext_resource type="Script" path="res://Assets/Script/game_over_screen.gd" id="1_f1qhb"]
 [ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="1_m21xy"]
@@ -28,6 +28,10 @@ font = ExtResource("1_m21xy")
 font_size = 50
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jgkpw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0e2u6"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -105,25 +109,8 @@ label_settings = SubResource("LabelSettings_ou4dr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Restart" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.5
-offset_top = 32.0
-offset_right = 120.5
-offset_bottom = 106.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.6531, 0.0924, 0.84, 1)
-theme_override_fonts/font = ExtResource("1_m21xy")
-theme_override_font_sizes/font_size = 55
-text = "RETRY"
-
 [node name="QUIT" type="Button" parent="Panel"]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,9 +118,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -124.5
-offset_top = 122.0
+offset_top = 126.0
 offset_right = 121.5
-offset_bottom = 195.0
+offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.6531, 0.0924, 0.84, 1)
@@ -141,5 +128,38 @@ theme_override_fonts/font = ExtResource("1_m21xy")
 theme_override_font_sizes/font_size = 55
 text = "QUIT"
 
-[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
+[node name="QUIT" type="TouchScreenButton" parent="Panel/QUIT"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(247, 73)
+texture_normal = SubResource("CanvasTexture_jgkpw")
+action = "quit"
+
+[node name="Restart" type="Button" parent="Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = 36.0
+offset_right = 121.5
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6531, 0.0924, 0.84, 1)
+theme_override_fonts/font = ExtResource("1_m21xy")
+theme_override_font_sizes/font_size = 55
+text = "Retry"
+
+[node name="Restart" type="TouchScreenButton" parent="Panel/Restart"]
+self_modulate = Color(1, 1, 1, 0)
+scale = Vector2(246, 73)
+texture_normal = SubResource("CanvasTexture_0e2u6")
+action = "restart"
+
 [connection signal="pressed" from="Panel/QUIT" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/QUIT/QUIT" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/Restart/Restart" to="." method="_on_restart_pressed"]

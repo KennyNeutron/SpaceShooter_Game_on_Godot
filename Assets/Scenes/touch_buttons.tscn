@@ -12,10 +12,10 @@ texture_normal = ExtResource("1_56u5f")
 action = "pause"
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("2_0nk1f")]
-offset_left = 166.0
-offset_top = -281.0
-offset_right = 466.0
-offset_bottom = 19.0
+offset_left = 147.0
+offset_top = -250.0
+offset_right = 447.0
+offset_bottom = 50.0
 scale = Vector2(0.7, 0.7)
 pressed_color = Color(0.37065, 0.0315, 0.63, 1)
 joystick_mode = 1
