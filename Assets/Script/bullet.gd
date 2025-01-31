@@ -3,6 +3,13 @@ extends Area2D
 @export var speed = 600
 @export var damage = 10
 
+func _ready() -> void:
+	add_to_group("bullets")
+
+func _on_bullet_disappeared():
+	remove_from_group("bullets")
+	queue_free()
+
 func _process(delta: float) -> void:
 	global_position.y += -speed * delta
 

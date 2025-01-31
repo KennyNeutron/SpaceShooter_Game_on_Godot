@@ -74,12 +74,20 @@ func enemyship_killed(points):
 func enemy_hit():
 	hit_sound.play()
 
+func wait_for_bullets_to_finish():
+	while get_tree().get_nodes_in_group("bullets").size() > 0:
+		await get_tree().create_timer(0.2).timeout  
+
 func player_killed():
 	explode_sound.play()
+	await wait_for_bullets_to_finish()
+
 	gameover_screen.set_score(score)
 	gameover_screen.set_high_score(high_score)
 	save_game_data()
-	await get_tree().create_timer(0.5).timeout
+
+	await get_tree().create_timer(2.5).timeout
+	
 	gameover_screen.visible = true
 
 func quit_and_reset(delta):

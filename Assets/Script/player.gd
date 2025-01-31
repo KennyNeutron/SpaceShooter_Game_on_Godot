@@ -44,8 +44,8 @@ func die() -> void:
 	killed.emit()
 	$AnimatedSprite2D.play("explode_animation")
 	await get_tree().create_timer(0.1).timeout
-	queue_free()
 	stop.emit()
+	queue_free()
 
 func life(recover) -> void:
 	addlife.emit(recover)
