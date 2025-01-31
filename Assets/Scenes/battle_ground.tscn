@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbhfgknblto0f"]
+[gd_scene load_steps=18 format=3 uid="uid://dbhfgknblto0f"]
 
 [ext_resource type="Script" path="res://Assets/Script/battle_ground.gd" id="1_wpbp7"]
 [ext_resource type="PackedScene" uid="uid://dctivcvvd5cq6" path="res://Assets/Scenes/player.tscn" id="2_flekx"]
@@ -11,6 +11,15 @@
 [ext_resource type="AudioStream" uid="uid://c7qsraxn3cqmp" path="res://Assets/Resources/audio/explode.wav" id="6_04a1p"]
 [ext_resource type="Texture2D" uid="uid://b07wldsnggcrx" path="res://Assets/Art/speed.png" id="6_gnapi"]
 [ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="7_2tcpd"]
+[ext_resource type="Script" path="res://Assets/Script/pause.gd" id="9_cbogb"]
+[ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="9_vxl5w"]
+[ext_resource type="PackedScene" uid="uid://feohf5in18n5" path="res://Assets/Scenes/touch_buttons.tscn" id="14_hw3nd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy3ag"]
+bg_color = Color(0.144567, 0.0510232, 0.206851, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhb26"]
+bg_color = Color(0.00434902, 0.114253, 0.201006, 1)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u5s56"]
 particle_flag_disable_z = true
@@ -43,6 +52,68 @@ stream = ExtResource("6_04a1p")
 
 [node name="GameOverScreen" parent="UILayer" instance=ExtResource("5_7r8yv")]
 visible = false
+
+[node name="PauseUI" type="CanvasLayer" parent="."]
+
+[node name="Pause" type="Node" parent="PauseUI"]
+script = ExtResource("9_cbogb")
+
+[node name="PausePanel" type="Panel" parent="PauseUI/Pause"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseUI/Pause/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -150.0
+offset_right = 137.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7068, 0.5115, 0.93, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_vxl5w")
+theme_override_font_sizes/font_size = 61
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="PauseUI/Pause/PausePanel"]
+process_mode = 3
+layout_mode = 2
+offset_left = 150.0
+offset_top = 450.0
+offset_right = 391.0
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(0.69552, 0.4128, 0.96, 1)
+theme_override_fonts/font = ExtResource("9_vxl5w")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_xy3ag")
+text = "Resume"
+
+[node name="Quit" type="Button" parent="PauseUI/Pause/PausePanel"]
+process_mode = 3
+layout_mode = 2
+offset_left = 150.0
+offset_top = 550.0
+offset_right = 391.0
+offset_bottom = 620.0
+theme_override_fonts/font = ExtResource("9_vxl5w")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_hhb26")
+text = "Quit"
 
 [node name="SpeedParticleEffect" type="GPUParticles2D" parent="."]
 position = Vector2(270, -50)
@@ -80,4 +151,14 @@ texture = ExtResource("7_2tcpd")
 centered = false
 region_rect = Rect2(0, 0, 540, 960)
 
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchButtons" parent="Buttons" instance=ExtResource("14_hw3nd")]
+
+[connection signal="pressed" from="PauseUI/Pause/PausePanel/Resume" to="PauseUI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseUI/Pause/PausePanel/Quit" to="PauseUI/Pause" method="_on_quit_pressed"]
 [connection signal="timeout" from="EnemySpawnpoint" to="." method="_on_enemy_spawnpoint_timeout"]

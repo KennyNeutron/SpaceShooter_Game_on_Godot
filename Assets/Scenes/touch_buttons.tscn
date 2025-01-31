@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://feohf5in18n5"]
+
+[ext_resource type="Texture2D" uid="uid://cqf0yyv0s1xij" path="res://Assets/Art/etool_1738319595665.png" id="1_56u5f"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_0nk1f"]
+
+[node name="TouchButtons" type="CanvasLayer"]
+
+[node name="pauseButton" type="TouchScreenButton" parent="."]
+position = Vector2(475, 14)
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("1_56u5f")
+action = "pause"
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("2_0nk1f")]
+offset_left = 166.0
+offset_top = -281.0
+offset_right = 466.0
+offset_bottom = 19.0
+scale = Vector2(0.7, 0.7)
+pressed_color = Color(0.37065, 0.0315, 0.63, 1)
+joystick_mode = 1
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_up"
+action_down = "move_down"
