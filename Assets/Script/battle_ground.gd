@@ -1,6 +1,14 @@
 extends Node2D
 
 @export var enemy_spaceship_scene: Array[PackedScene] = []
+var power_up_scenes = [
+	preload("res://Assets/Scenes/passrockets_power_up.tscn"),
+	preload("res://Assets/Scenes/medkit.tscn"),
+	preload("res://Assets/Scenes/firewall_power_ups.tscn"),
+	preload("res://Assets/Scenes/en_shield_power_up.tscn"),
+	preload("res://Assets/Scenes/dpb_power_ups.tscn"),
+	preload("res://Assets/Scenes/antivirus_power_up.tscn")
+]
 
 @export var missile_scene: PackedScene = preload("res://Assets/Scenes/antivirus_missle.tscn")
 @export var firewall_scene: PackedScene = preload("res://Assets/Scenes/firewall_canon.tscn")
@@ -10,7 +18,6 @@ extends Node2D
 
 @onready var player_spawn = $PlayerSpawnpoint
 @onready var bullet_container = $BulletContainer
-@onready var enemybullet_container = $EnemyBulletContainer
 @onready var powerup_container = $PowerUpContainer
 @onready var timer = $EnemySpawnpoint
 @onready var enemy_container = $EnemyContainer
@@ -26,6 +33,7 @@ var score := 0:
 		score = value
 		hud.score = score
 var high_score
+var last_powerups_spawn_time = 0
 
 @onready var time_label = $UILayer/HUD/Timer/time
 var time = 0.0
@@ -118,6 +126,15 @@ func time_start(delta):
 	var seconds = total_seconds % 60
 	
 	time_label.text = "%02d:%02d" % [minutes, seconds]
+	
+	if total_seconds - last_powerups_spawn_time >= 30:
+		spawn_power_up()
+		last_powerups_spawn_time = total_seconds
+
+func spawn_power_up():
+	var random_power_up_scene = power_up_scenes[randi() % len(power_up_scenes)].instantiate()
+	random_power_up_scene.global_position = Vector2(randf_range(50, 500), -50)
+	powerup_container.add_child(random_power_up_scene)
 
 func health_label():
 	playerhp_label.text = str(autoload.lives)
