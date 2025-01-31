@@ -1,8 +1,12 @@
 extends Node2D
 
 @export var enemy_spaceship_scene: Array[PackedScene] = []
+
 @export var missile_scene: PackedScene = preload("res://Assets/Scenes/antivirus_missle.tscn")
 @export var firewall_scene: PackedScene = preload("res://Assets/Scenes/firewall_canon.tscn")
+@export var datapocketbomb_scene: PackedScene = preload("res://Assets/Scenes/data_pocket_bomb.tscn")
+@export var encryptionshield_scene: PackedScene = preload("res://Assets/Scenes/encryption_shield.tscn")
+@export var passwordrockets_scene: PackedScene = preload("res://Assets/Scenes/password_rockets.tscn")
 
 @onready var player_spawn = $PlayerSpawnpoint
 @onready var bullet_container = $BulletContainer
@@ -67,7 +71,7 @@ func player_killed():
 	gameover_screen.set_score(score)
 	gameover_screen.set_high_score(high_score)
 	save_game_data()
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(0.5).timeout
 	gameover_screen.visible = true
 
 func quit_and_reset(delta):
@@ -77,7 +81,7 @@ func quit_and_reset(delta):
 		get_tree().reload_current_scene()
 	
 	if timer.wait_time > 0.5:
-		timer.wait_time -= delta * 0.05
+		timer.wait_time -= delta * 0.5
 	elif timer.wait_time < 0.5:
 		timer.wait_time = 0.5
 
@@ -98,6 +102,9 @@ func player_data():
 	player.addlife.connect(add_life)
 	player.missiles.connect(spawn_missiles)
 	player.firewall.connect(firewall_canons)
+	player.pocketbomb.connect(pocket_bomb)
+	player.shield.connect(player_spawn_shield)
+	player.prockets.connect(password_rockets)
 	player.stop.connect(stop)
 
 func add_life(recover: int) -> void:
@@ -132,5 +139,29 @@ func player_spawn_firewallcanon():
 		firewall.global_position = Vector2(randf_range(50, 500), 960)
 		powerup_container.add_child(firewall)
 
+func password_rockets():
+	call_deferred("spawn_pass_rockets")
+
+func spawn_pass_rockets():
+	var offset = 40
+	for i in range(3):
+		var pr = passwordrockets_scene.instantiate()
+		pr.position = Vector2(0, offset)
+		player.add_child(pr)
+		offset -= 50
+
+func pocket_bomb():
+	var dpBomb = datapocketbomb_scene.instantiate()
+	dpBomb.global_position = player.global_position
+	powerup_container.call_deferred("add_child", dpBomb)
+
+func player_spawn_shield():
+	call_deferred("encryption_shields")
+
+func encryption_shields():
+	var es = encryptionshield_scene.instantiate()
+	es.position = Vector2()  # Set local position
+	player.add_child(es)
+	
 func stop():
 	set_process(false)

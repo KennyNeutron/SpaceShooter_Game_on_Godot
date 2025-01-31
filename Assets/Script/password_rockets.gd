@@ -1,13 +1,13 @@
 extends Area2D
 
 @export var speed = 600
-@export var damage = 10
+@export var damage = 100
 
 func _process(delta: float) -> void:
-	global_position.y += -speed * delta
+	global_pos(delta)
 
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free()
+func global_pos(delta):
+	global_position.y += -speed * delta
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is Enemy or area is Burstenemy:

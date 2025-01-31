@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://jf3a082skoc3"]
+
+[ext_resource type="Script" path="res://Assets/Script/dpb_power_ups.gd" id="1_8thsm"]
+[ext_resource type="Texture2D" uid="uid://bm7d2u2jqq1iu" path="res://Assets/Art/Another Art/etool_1738292255514.png" id="1_xl21s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h26eq"]
+radius = 15.6525
+
+[node name="DpbPowerUps" type="Area2D"]
+position = Vector2(288, 242)
+script = ExtResource("1_8thsm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_xl21s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("CircleShape2D_h26eq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -30)
+scale = Vector2(0.3, 0.25)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

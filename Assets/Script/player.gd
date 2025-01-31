@@ -6,6 +6,9 @@ signal stop
 signal addlife
 signal missiles
 signal firewall
+signal pocketbomb
+signal shield
+signal prockets
 
 @export var speed = 300
 @export var shoot_per_sec := 0.3
@@ -49,3 +52,12 @@ func spawn_missile():
 
 func spawn_firewallcanon():
 	firewall.emit()
+
+func spawn_dpb():
+	pocketbomb.emit()
+
+func spawn_shield():
+	shield.emit()
+
+func spawn_passrockets():
+	prockets.emit()

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmi3aipqxvmul"]
+
+[ext_resource type="Script" path="res://Assets/Script/en_shield_power_up.gd" id="1_sevso"]
+[ext_resource type="Texture2D" uid="uid://o841yy3bkxts" path="res://Assets/Art/Another Art/etool_1738303780358.png" id="2_scrj7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5tgv"]
+radius = 15.8114
+
+[node name="EnShieldPowerUp" type="Area2D"]
+position = Vector2(248, 292)
+script = ExtResource("1_sevso")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_scrj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d5tgv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -30)
+scale = Vector2(0.35, 0.25)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

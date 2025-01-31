@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://hi6uko0l080q"]
+
+[ext_resource type="Script" path="res://Assets/Script/data_pocket_bomb.gd" id="1_o16j2"]
+[ext_resource type="Texture2D" uid="uid://bm7d2u2jqq1iu" path="res://Assets/Art/Another Art/etool_1738292255514.png" id="1_u6vj6"]
+[ext_resource type="Texture2D" uid="uid://b7g0k3vdmldiv" path="res://Assets/Explosions pack/explosion-1-g/spritesheet.png" id="1_yi5kx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqk1w"]
+atlas = ExtResource("1_yi5kx")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwvfs"]
+atlas = ExtResource("1_yi5kx")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5k81"]
+atlas = ExtResource("1_yi5kx")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iief"]
+atlas = ExtResource("1_yi5kx")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb46b"]
+atlas = ExtResource("1_yi5kx")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y0ax"]
+atlas = ExtResource("1_yi5kx")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqtgl"]
+atlas = ExtResource("1_yi5kx")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blogk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqk1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwvfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5k81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iief")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb46b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y0ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqtgl")
+}],
+"loop": false,
+"name": &"explosive_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8a4kb"]
+radius = 153.395
+
+[node name="DataPocketBomb" type="Area2D"]
+position = Vector2(272, 387)
+collision_layer = 128
+collision_mask = 10
+script = ExtResource("1_o16j2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_u6vj6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 4)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_blogk")
+animation = &"explosive_animation"
+frame = 6
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 4)
+shape = SubResource("CircleShape2D_8a4kb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

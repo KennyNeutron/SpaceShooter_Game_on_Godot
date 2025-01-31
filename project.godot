@@ -76,6 +76,9 @@ shoot={
 2d_physics/layer_5="firewall_canon"
 2d_physics/layer_6="medkit"
 2d_physics/layer_7="antivirus_missle"
+2d_physics/layer_8="data_pocket_bomb"
+2d_physics/layer_9="encryption_shield"
+2d_physics/layer_10="password_rockets"
 
 [rendering]
 
