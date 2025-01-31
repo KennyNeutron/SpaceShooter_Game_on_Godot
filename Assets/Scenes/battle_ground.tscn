@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbhfgknblto0f"]
+[gd_scene load_steps=22 format=3 uid="uid://dbhfgknblto0f"]
 
 [ext_resource type="Script" path="res://Assets/Script/battle_ground.gd" id="1_wpbp7"]
 [ext_resource type="PackedScene" uid="uid://dctivcvvd5cq6" path="res://Assets/Scenes/player.tscn" id="2_flekx"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="7_2tcpd"]
 [ext_resource type="Script" path="res://Assets/Script/pause.gd" id="9_cbogb"]
 [ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="9_vxl5w"]
+[ext_resource type="PackedScene" uid="uid://dfska7dy1dpl" path="res://Assets/Scenes/medkit.tscn" id="12_kfy37"]
 [ext_resource type="PackedScene" uid="uid://feohf5in18n5" path="res://Assets/Scenes/touch_buttons.tscn" id="14_hw3nd"]
+[ext_resource type="PackedScene" uid="uid://cmi3aipqxvmul" path="res://Assets/Scenes/en_shield_power_up.tscn" id="16_6g2ag"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy3ag"]
 bg_color = Color(0.144567, 0.0510232, 0.206851, 1)
@@ -174,6 +176,11 @@ offset_right = 58.0
 offset_bottom = 91.0
 
 [node name="TouchButtons" parent="Buttons" instance=ExtResource("14_hw3nd")]
+
+[node name="EnShieldPowerUp" parent="." instance=ExtResource("16_6g2ag")]
+
+[node name="Medkit" parent="EnShieldPowerUp" instance=ExtResource("12_kfy37")]
+position = Vector2(-55, 59)
 
 [connection signal="pressed" from="PauseUI/Pause/PausePanel/Resume" to="PauseUI/Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseUI/Pause/PausePanel/Resume/Resume" to="PauseUI/Pause" method="_on_resume_pressed"]

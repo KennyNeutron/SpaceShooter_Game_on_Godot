@@ -86,6 +86,7 @@ func quit_and_reset(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	elif Input.is_action_just_pressed("restart"):
+		get_node("/root/autoload").reset_lives()
 		get_tree().reload_current_scene()
 	
 	if timer.wait_time > 0.5:

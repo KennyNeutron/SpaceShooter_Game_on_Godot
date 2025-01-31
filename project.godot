@@ -23,7 +23,6 @@ autoload="*res://Assets/Global Script/global_script.gd"
 
 window/size/viewport_width=540
 window/size/viewport_height=1028
-window/size/mode=3
 window/size/initial_position_type=2
 window/stretch/mode="viewport"
 window/handheld/orientation=1
