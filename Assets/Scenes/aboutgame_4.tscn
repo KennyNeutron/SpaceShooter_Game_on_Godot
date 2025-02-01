@@ -1,0 +1,255 @@
+[gd_scene load_steps=11 format=3 uid="uid://btolfpccvqhcw"]
+
+[ext_resource type="Script" path="res://Assets/Script/aboutgame_4.gd" id="1_0k2gl"]
+[ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="1_iyrxv"]
+[ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="2_bpyj3"]
+[ext_resource type="Texture2D" uid="uid://sykqx4sbl12w" path="res://Assets/Art/Another Art/etool_1738307568263.png" id="3_qdg0y"]
+[ext_resource type="Texture2D" uid="uid://dm2hi4wfm3fhh" path="res://Assets/Art/Another Art/12.png" id="4_8yjt0"]
+[ext_resource type="Texture2D" uid="uid://bssajx12tn8kc" path="res://Assets/Art/etool_1738240392111.png" id="5_dkvqa"]
+[ext_resource type="Texture2D" uid="uid://bm7d2u2jqq1iu" path="res://Assets/Art/Another Art/etool_1738292255514.png" id="6_ycl2t"]
+[ext_resource type="Texture2D" uid="uid://dbjwondexiq38" path="res://Assets/Art/Left.png" id="7_3clqc"]
+[ext_resource type="Texture2D" uid="uid://d8tj60srjfi5" path="res://Assets/Art/Another Art/playButtonHighlighted.png" id="8_hr340"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k3skg"]
+
+[node name="aboutgame4" type="Node2D"]
+script = ExtResource("1_0k2gl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.084, 3.99)
+texture = ExtResource("1_iyrxv")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="passwordrocketstxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 50.0
+offset_right = 195.0
+offset_bottom = 80.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 20
+text = "Password Rockets"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/passwordrocketstxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = 14.0
+offset_right = 30.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/passwordrocketstxt/powerupscontainer"]
+position = Vector2(44, 48)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_qdg0y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/passwordrocketstxt/powerupscontainer"]
+position = Vector2(81, 120)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_8yjt0")
+
+[node name="TextureRect" type="TextureRect" parent="Control/passwordrocketstxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 33.0
+offset_right = 487.0
+offset_bottom = 196.0
+texture = SubResource("CanvasTexture_k3skg")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/passwordrocketstxt/TextureRect"]
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 390.0
+offset_bottom = 156.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 14
+text = "Description in Game: A high-damage projectile that 
+targets specific enemies to remove their threat.
+
+Real-Life Parallel: Strong passwords act as the first 
+line of defense against unauthorized access, targeting 
+attackers and preventing breaches.
+
+Tip for Players: Create strong, unique passwords 
+for every account, and use a password manager 
+to keep track of them."
+vertical_alignment = 1
+
+[node name="medkittxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 250.0
+offset_right = 107.0
+offset_bottom = 280.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 20
+text = "Medkit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/medkittxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 23.0
+offset_right = 96.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/medkittxt/powerupscontainer"]
+position = Vector2(39, 60)
+scale = Vector2(0.0887109, 0.0906641)
+texture = ExtResource("5_dkvqa")
+
+[node name="TextureRect" type="TextureRect" parent="Control/medkittxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 78.0
+offset_top = 33.0
+offset_right = 487.0
+offset_bottom = 183.0
+texture = SubResource("CanvasTexture_k3skg")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/medkittxt/TextureRect"]
+offset_left = 7.0
+offset_top = 11.0
+offset_right = 406.0
+offset_bottom = 143.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 14
+text = "Description in Game: Restores your ship’s 
+health and keeps you in the fight against cyber threats.
+
+Real-Life Parallel: In cybersecurity, regular system 
+updates and backups act as a \"medkit,\" ensuring your 
+data can recover after an attack.
+
+Tip for Players: Back up your data regularly and 
+keep your system patched to recover quickly from threats."
+vertical_alignment = 1
+
+[node name="datapocketsbombtxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 450.0
+offset_right = 195.0
+offset_bottom = 480.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 20
+text = "Data Packet Bomb"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/datapocketsbombtxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = 14.0
+offset_right = 30.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/datapocketsbombtxt/powerupscontainer"]
+position = Vector2(58, 82)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_ycl2t")
+
+[node name="TextureRect" type="TextureRect" parent="Control/datapocketsbombtxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 83.0
+offset_top = 31.0
+offset_right = 480.0
+offset_bottom = 188.0
+texture = SubResource("CanvasTexture_k3skg")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/datapocketsbombtxt/TextureRect"]
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 390.0
+offset_bottom = 156.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 14
+text = "Description in Game: Releases a burst of clean data 
+that clears out all corrupted files in the area.
+
+Real-Life Parallel: Packet filtering inspects data 
+packets traveling over a network and removes harmful 
+ones to keep the system clean.
+
+Tip for Players: Set up packet filters on your network 
+to prevent malicious traffic."
+vertical_alignment = 1
+
+[node name="prevbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(50, 912)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_3clqc")
+
+[node name="playbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(350, 914)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("8_hr340")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 681.0
+offset_right = 523.0
+offset_bottom = 811.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 15
+text = "Canteras, Nathaniel Alfonso P.          Castillo, Darren Jade R.
+
+Amazona, Raizen Rei V.                  Pulleros, Karl A.
+
+Magboo, Lorenz M.                       Fatal, Rey Ben B.
+
+De Guzman, Dominick F.                  Dimaculangan, Rey Angelo L."
+
+[connection signal="pressed" from="Control/prevbutton" to="." method="_on_prevbutton_pressed"]
+[connection signal="pressed" from="Control/playbutton" to="." method="_on_playbutton_pressed"]

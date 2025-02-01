@@ -1,0 +1,297 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxdsyfsql55fr"]
+
+[ext_resource type="Script" path="res://Assets/Script/aboutgame.gd" id="1_1i6tt"]
+[ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="1_ysbo2"]
+[ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="2_7qjui"]
+[ext_resource type="Texture2D" uid="uid://dvxsde3eqy" path="res://Assets/Art/Another Art/scoreUIBg.png" id="3_46ajj"]
+[ext_resource type="Texture2D" uid="uid://bi3spkexm8lmi" path="res://Assets/Art/Another Art/timeUIBg.png" id="4_a5hyw"]
+[ext_resource type="Texture2D" uid="uid://bcwjvl7s15wiy" path="res://Assets/Art/Another Art/livesUIBg.png" id="5_4ugeu"]
+[ext_resource type="Texture2D" uid="uid://5qea8frywfgg" path="res://Assets/Art/Right.png" id="6_h240c"]
+[ext_resource type="Texture2D" uid="uid://dvpxr4v2exp5t" path="res://Assets/Art/etool_1738402930019.png" id="7_kdwng"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8h2q6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j83uu"]
+
+[node name="aboutgame" type="Node2D"]
+script = ExtResource("1_1i6tt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.086, 3.99667)
+texture = ExtResource("1_ysbo2")
+centered = false
+region_rect = Rect2(0, 0, 540, 1028)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tittle" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 90.0
+offset_right = 503.0
+offset_bottom = 120.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 36
+text = "Cyberventure Documentation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="overviewtxt" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 152.0
+offset_right = 128.0
+offset_bottom = 176.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 22
+text = "Overview"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/overviewtxt"]
+self_modulate = Color(0.2932, 0.044, 0.4, 0.6)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = 18.0
+offset_right = 344.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_8h2q6")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/overviewtxt/TextureRect"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -6.0
+offset_right = 377.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 14
+text = "Cyberventure is an exciting space shooter game where 
+players battle against waves of enemies in space.
+As players progress, they face increasing difficulty 
+with a timer system and must manage their lives to 
+achieve the highest score possible. The game also 
+includes various power-ups to enhance 
+the player's abilities."
+vertical_alignment = 1
+
+[node name="gamemechanicstxt" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 315.0
+offset_right = 193.0
+offset_bottom = 345.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 22
+text = "Game Mechanics"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scoresystemtxt" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 360.0
+offset_right = 179.0
+offset_bottom = 390.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 20
+text = "Scoring System"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/scoresystemtxt"]
+position = Vector2(65, 46)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_46ajj")
+
+[node name="numbers" type="Label" parent="Control/scoresystemtxt/Sprite2D"]
+offset_left = -2.50002
+offset_top = -12.5
+offset_right = 127.5
+offset_bottom = 10.5
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 20
+text = "999999999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/scoresystemtxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 58.0
+offset_right = 396.0
+offset_bottom = 147.0
+texture = SubResource("CanvasTexture_j83uu")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/scoresystemtxt/TextureRect"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 381.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 14
+text = "~ Players earn points by defeating enemies.
+~ The score increases based on the type and number of 
+  enemies killed.
+~ The goal is to achieve the highest score possible 
+  before losing all lives."
+vertical_alignment = 1
+
+[node name="timeanddifficulty" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 530.0
+offset_right = 179.0
+offset_bottom = 560.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 20
+text = "Time and Difficulty"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/timeanddifficulty"]
+position = Vector2(42.2, 46)
+scale = Vector2(0.260976, 0.4)
+texture = ExtResource("4_a5hyw")
+
+[node name="numbers" type="Label" parent="Control/timeanddifficulty/Sprite2D"]
+offset_left = -0.766337
+offset_top = -12.5
+offset_right = 93.2337
+offset_bottom = 13.5
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/timeanddifficulty"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 58.0
+offset_right = 438.0
+offset_bottom = 147.0
+texture = SubResource("CanvasTexture_j83uu")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/timeanddifficulty/TextureRect"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 381.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 14
+text = "~ The game includes a timer that tracks how long the player 
+  has been playing.
+~ As the timer runs, the game becomes progressively harder, 
+  with more enemies appearing or enemies becoming stronger."
+vertical_alignment = 1
+
+[node name="playerlives" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 703.0
+offset_right = 158.0
+offset_bottom = 733.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 20
+text = "Player Lives"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/playerlives"]
+position = Vector2(55.3537, 45.4)
+scale = Vector2(0.357694, 0.378571)
+texture = ExtResource("5_4ugeu")
+
+[node name="numbers" type="Label" parent="Control/playerlives/Sprite2D"]
+offset_left = 77.2906
+offset_top = -15.0
+offset_right = 108.291
+offset_bottom = 11.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 32
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/playerlives"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 58.0
+offset_right = 442.0
+offset_bottom = 147.0
+texture = SubResource("CanvasTexture_j83uu")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/playerlives/TextureRect"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 381.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_7qjui")
+theme_override_font_sizes/font_size = 14
+text = "~ Players start with a set number of lives.
+~ Each time a player is hit by an enemy or enemy projectile, 
+  they lose a life.
+~ The game ends when the player runs out of lives."
+vertical_alignment = 1
+
+[node name="nextbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(442, 913)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("6_h240c")
+
+[node name="backbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(40, 913)
+scale = Vector2(0.1, 0.097)
+texture_normal = ExtResource("7_kdwng")
+
+[connection signal="pressed" from="Control/nextbutton" to="." method="_on_nextbutton_pressed"]
+[connection signal="pressed" from="Control/backbutton" to="." method="_on_backbutton_pressed"]

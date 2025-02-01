@@ -1,0 +1,351 @@
+[gd_scene load_steps=20 format=3 uid="uid://86gugcmn2mjh"]
+
+[ext_resource type="Script" path="res://Assets/Script/aboutgame_2.gd" id="1_al6uy"]
+[ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="1_nt260"]
+[ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="2_cv8g5"]
+[ext_resource type="Texture2D" uid="uid://o841yy3bkxts" path="res://Assets/Art/Another Art/etool_1738303780358.png" id="3_js1c4"]
+[ext_resource type="Texture2D" uid="uid://sykqx4sbl12w" path="res://Assets/Art/Another Art/etool_1738307568263.png" id="4_h4nts"]
+[ext_resource type="Texture2D" uid="uid://bm7d2u2jqq1iu" path="res://Assets/Art/Another Art/etool_1738292255514.png" id="5_ifxsp"]
+[ext_resource type="Texture2D" uid="uid://bssajx12tn8kc" path="res://Assets/Art/etool_1738240392111.png" id="6_ubxyc"]
+[ext_resource type="Texture2D" uid="uid://dpnomlb0lx3jv" path="res://Assets/Art/Another Art/flame.png" id="8_lqlm5"]
+[ext_resource type="Texture2D" uid="uid://brglbt3tghshp" path="res://Assets/MissilePack/etool_1738410270768.png" id="8_omleg"]
+[ext_resource type="Texture2D" uid="uid://byrjoc47nswfd" path="res://Assets/Art/transparentDark05.png" id="9_anksw"]
+[ext_resource type="Texture2D" uid="uid://bgr70xgkqmr04" path="res://Assets/Art/transparentDark49.png" id="10_h4dc2"]
+[ext_resource type="Texture2D" uid="uid://dfe1e2nomfh1c" path="res://Assets/Art/Another Art/spaceships.png" id="11_gv80q"]
+[ext_resource type="Texture2D" uid="uid://5qea8frywfgg" path="res://Assets/Art/Right.png" id="12_6rgxs"]
+[ext_resource type="Texture2D" uid="uid://dbjwondexiq38" path="res://Assets/Art/Left.png" id="13_becy2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sulfk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sv5q"]
+atlas = ExtResource("11_gv80q")
+region = Rect2(288, 0, 72, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knmkk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sv5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3ley"]
+atlas = ExtResource("11_gv80q")
+region = Rect2(504, 73, 72, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5haca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3ley")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="aboutgame2" type="Node2D"]
+script = ExtResource("1_al6uy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.082, 3.98)
+texture = ExtResource("1_nt260")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="powerupstxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 90.0
+offset_right = 132.0
+offset_bottom = 120.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 20
+text = "Power-ups"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/powerupstxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 23.0
+offset_right = 66.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/powerupstxt/powerupscontainer"]
+position = Vector2(112, 43)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("3_js1c4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/powerupstxt/powerupscontainer"]
+position = Vector2(84, 25)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("4_h4nts")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Control/powerupstxt/powerupscontainer"]
+position = Vector2(54, 43)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("5_ifxsp")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Control/powerupstxt/powerupscontainer"]
+position = Vector2(85, 52)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_ubxyc")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Control/powerupstxt/powerupscontainer"]
+position = Vector2(67, 79)
+rotation = -0.872665
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("8_omleg")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Control/powerupstxt/powerupscontainer"]
+position = Vector2(103, 78)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_lqlm5")
+
+[node name="TextureRect" type="TextureRect" parent="Control/powerupstxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 121.0
+offset_top = 53.0
+offset_right = 502.0
+offset_bottom = 142.0
+texture = SubResource("CanvasTexture_sulfk")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/powerupstxt/TextureRect"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 381.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 14
+text = "~ Different power-ups are available during gameplay.
+~ When the player collects a power-up, they gain 
+  special  abilities that can help them defeat enemies 
+  more effectively."
+vertical_alignment = 1
+
+[node name="gamecontrolstxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 250.0
+offset_right = 155.0
+offset_bottom = 280.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 20
+text = "Game Control"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/gamecontrolstxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 23.0
+offset_right = 66.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/gamecontrolstxt/powerupscontainer"]
+position = Vector2(57.5, 47)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_anksw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/gamecontrolstxt/powerupscontainer"]
+position = Vector2(57.5, 46)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_h4dc2")
+
+[node name="TextureRect" type="TextureRect" parent="Control/gamecontrolstxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 121.0
+offset_top = 53.0
+offset_right = 487.0
+offset_bottom = 142.0
+texture = SubResource("CanvasTexture_sulfk")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/gamecontrolstxt/TextureRect"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 381.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 14
+text = "~ The game is controlled using a joystick, allowing 
+  players to move their character in any direction 
+  during gameplay."
+vertical_alignment = 1
+
+[node name="enemytypetxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 430.0
+offset_right = 159.0
+offset_bottom = 460.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 22
+text = "Enemy Types"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="normalenemytxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 490.0
+offset_right = 155.0
+offset_bottom = 520.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 20
+text = "Normal Enemy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/normalenemytxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 23.0
+offset_right = 66.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/normalenemytxt/powerupscontainer"]
+position = Vector2(58.5, 59)
+sprite_frames = SubResource("SpriteFrames_knmkk")
+
+[node name="TextureRect" type="TextureRect" parent="Control/normalenemytxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 121.0
+offset_top = 53.0
+offset_right = 470.0
+offset_bottom = 142.0
+texture = SubResource("CanvasTexture_sulfk")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/normalenemytxt/TextureRect"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 381.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 14
+text = "~ Speed: Slow
+~ Hit Requirement: Multiple hits to be killed
+~ Behavior: A standard enemy with basic movement 
+            patterns and slower speed."
+vertical_alignment = 1
+
+[node name="burtenemytxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 650.0
+offset_right = 149.0
+offset_bottom = 680.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 20
+text = "Burst Enemy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/burtenemytxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 23.0
+offset_right = 66.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/burtenemytxt/powerupscontainer"]
+position = Vector2(58.5, 59)
+sprite_frames = SubResource("SpriteFrames_5haca")
+
+[node name="TextureRect" type="TextureRect" parent="Control/burtenemytxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 121.0
+offset_top = 53.0
+offset_right = 446.0
+offset_bottom = 142.0
+texture = SubResource("CanvasTexture_sulfk")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/burtenemytxt/TextureRect"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 323.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 14
+text = "~ Speed: Double the speed of a normal enemy
+~ Hit Requirement: One hit to be killed
+~ Behavior: A fast-moving enemy that requires 
+  a single hit to be destroyed, but poses a 
+  greater challenge due to its speed."
+vertical_alignment = 1
+
+[node name="nextbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(442, 913)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("12_6rgxs")
+
+[node name="prevbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(50, 912)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("13_becy2")
+
+[connection signal="pressed" from="Control/nextbutton" to="." method="_on_nextbutton_pressed"]
+[connection signal="pressed" from="Control/prevbutton" to="." method="_on_prevbutton_pressed"]

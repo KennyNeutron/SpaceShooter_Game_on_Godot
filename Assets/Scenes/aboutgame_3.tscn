@@ -1,0 +1,260 @@
+[gd_scene load_steps=12 format=3 uid="uid://dv4v3rkmid7s5"]
+
+[ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="1_eeqt2"]
+[ext_resource type="Script" path="res://Assets/Script/aboutgame_3.gd" id="1_undub"]
+[ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="2_1842t"]
+[ext_resource type="Texture2D" uid="uid://dpnomlb0lx3jv" path="res://Assets/Art/Another Art/flame.png" id="3_xbar3"]
+[ext_resource type="Texture2D" uid="uid://cw1t3qox0b5rv" path="res://Assets/Art/Another Art/09.png" id="4_2e82j"]
+[ext_resource type="Texture2D" uid="uid://brglbt3tghshp" path="res://Assets/MissilePack/etool_1738410270768.png" id="5_ykjlo"]
+[ext_resource type="Texture2D" uid="uid://o841yy3bkxts" path="res://Assets/Art/Another Art/etool_1738303780358.png" id="6_7ki6d"]
+[ext_resource type="Texture2D" uid="uid://dllaxhjjgb7p4" path="res://Assets/Art/Another Art/etool_1738307323821.png" id="7_4vmgc"]
+[ext_resource type="Texture2D" uid="uid://5qea8frywfgg" path="res://Assets/Art/Right.png" id="8_byxks"]
+[ext_resource type="Texture2D" uid="uid://dbjwondexiq38" path="res://Assets/Art/Left.png" id="9_ytpiw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m16y0"]
+
+[node name="aboutgame3" type="Node2D"]
+script = ExtResource("1_undub")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.082, 3.98333)
+texture = ExtResource("1_eeqt2")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="enemytypetxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 50.0
+offset_right = 233.0
+offset_bottom = 80.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 22
+text = "Power-Up Mechanics"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="firewallcanonstxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 100.0
+offset_right = 185.0
+offset_bottom = 130.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 20
+text = "Firewall Canons"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/firewallcanonstxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = 14.0
+offset_right = 30.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/firewallcanonstxt/powerupscontainer"]
+position = Vector2(44, 51)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_xbar3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/firewallcanonstxt/powerupscontainer"]
+position = Vector2(81, 120)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_2e82j")
+
+[node name="TextureRect" type="TextureRect" parent="Control/firewallcanonstxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 33.0
+offset_right = 487.0
+offset_bottom = 196.0
+texture = SubResource("CanvasTexture_m16y0")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/firewallcanonstxt/TextureRect"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 323.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 14
+text = "Description in Game: Shoots blazing energy to block and 
+neutralize malware bots trying to breach your defenses.
+
+Real-Life Parallel: Firewalls act as barriers that 
+prevent unauthorized access to your computer or network. 
+They filter out malicious data packets to keep your 
+system secure.
+
+Tip for Players: Always keep your firewall turned 
+on to stop unwanted intrusions!"
+vertical_alignment = 1
+
+[node name="antivirusmissile" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 320.0
+offset_right = 205.0
+offset_bottom = 350.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 20
+text = "Antivirus Missile"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/antivirusmissile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = 14.0
+offset_right = 30.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/antivirusmissile/powerupscontainer"]
+position = Vector2(59, 87)
+rotation = -0.872665
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_ykjlo")
+
+[node name="TextureRect" type="TextureRect" parent="Control/antivirusmissile"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 98.0
+offset_top = 31.0
+offset_right = 486.0
+offset_bottom = 194.0
+texture = SubResource("CanvasTexture_m16y0")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/antivirusmissile/TextureRect"]
+offset_left = 10.0
+offset_top = 14.0
+offset_right = 402.0
+offset_bottom = 146.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 14
+text = "Description in Game: Fires explosive rocket that 
+eliminate multiple threats in a single blast.
+
+Real-Life Parallel: Antivirus software scans and 
+removes malicious files from your devices, protecting
+them from infections.
+
+Tip for Players: Regularly update your antivirus 
+software to stay protected from new threats."
+vertical_alignment = 1
+
+[node name="encryptionshieldtxt" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 540.0
+offset_right = 205.0
+offset_bottom = 570.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 20
+text = "Encryption Shield"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/encryptionshieldtxt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = 14.0
+offset_right = 30.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/encryptionshieldtxt/powerupscontainer"]
+position = Vector2(44, 51)
+rotation = -0.872665
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_7ki6d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/encryptionshieldtxt/powerupscontainer"]
+position = Vector2(81, 120)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_4vmgc")
+
+[node name="TextureRect" type="TextureRect" parent="Control/encryptionshieldtxt"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 117.0
+offset_top = 34.0
+offset_right = 498.0
+offset_bottom = 215.0
+texture = SubResource("CanvasTexture_m16y0")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/encryptionshieldtxt/TextureRect"]
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 377.0
+offset_bottom = 171.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 14
+text = "Description in Game: A temporary shield that 
+scrambles your data, making it unreadable 
+to attackers.
+
+Real-Life Parallel: Encryption transforms your data 
+into a secure format that can only be accessed 
+with a key, ensuring its safety during transmission.
+
+Tip for Players: Use encryption tools to secure 
+sensitive information, especially when 
+sharing it online."
+vertical_alignment = 1
+
+[node name="nextbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(442, 913)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_byxks")
+
+[node name="prevbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(50, 912)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("9_ytpiw")
+
+[connection signal="pressed" from="Control/nextbutton" to="." method="_on_nextbutton_pressed"]
+[connection signal="pressed" from="Control/prevbutton" to="." method="_on_prevbutton_pressed"]
