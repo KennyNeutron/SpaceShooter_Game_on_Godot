@@ -13,5 +13,11 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.spawn_shield()
+		var battle_gs = get_node("/root/BattleGround")
+		if !battle_gs.FlagBits_PowerUp_EncryptionShield:
+			body.popup_encryptionshield_powerup()
+			body.spawn_shield()
+			battle_gs.FlagBits_PowerUp_EncryptionShield = true
+		else:
+			body.spawn_shield()
 		queue_free()

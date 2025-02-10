@@ -13,5 +13,13 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.spawn_missile()
+		var battle_grounds = get_node("/root/BattleGround")
+		if !battle_grounds.FlagBits_PowerUp_AntiVirus:
+			#print("Pop Up Showing")
+			body.popup_antivirus_powerup()
+			body.spawn_missile()
+			battle_grounds.FlagBits_PowerUp_AntiVirus = true
+		else:
+			#print("Pop Up Not Showing")
+			body.spawn_missile()
 		queue_free()

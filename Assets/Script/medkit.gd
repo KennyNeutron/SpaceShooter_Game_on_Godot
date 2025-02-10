@@ -14,5 +14,13 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.life(recover)
+		var battle_ground = get_node("/root/BattleGround")
+		if !battle_ground.FlagBits_PowerUp_Medkit:
+			#print("Pop Up Showing")
+			body.popup_medkit_powerup()
+			body.life(recover)
+			battle_ground.FlagBits_PowerUp_Medkit = true
+		else:
+			#print("Pop Up Not Showing")
+			body.life(recover)
 		queue_free()

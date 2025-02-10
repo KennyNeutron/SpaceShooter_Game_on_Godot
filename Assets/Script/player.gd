@@ -1,5 +1,6 @@
 class_name Player extends CharacterBody2D
 
+# Spawn Bullets
 signal bullet_shot(bullet_scene, location)
 signal killed
 signal stop
@@ -9,6 +10,14 @@ signal firewall
 signal pocketbomb
 signal shield
 signal prockets
+
+# Description Pop Up
+signal popup_medkit
+signal popup_antivirus
+signal popup_firewallcannons
+signal popup_encryptionshield
+signal popup_passrockets
+signal popup_datapacketbomb
 
 @export var speed = 300
 @export var shoot_per_sec := 0.3
@@ -64,3 +73,21 @@ func spawn_shield():
 
 func spawn_passrockets():
 	prockets.emit()
+
+func popup_medkit_powerup():
+	popup_medkit.emit()
+
+func popup_antivirus_powerup():
+	popup_antivirus.emit()
+
+func popup_firewallcannons_powerup():
+	popup_firewallcannons.emit()
+
+func popup_encryptionshield_powerup():
+	popup_encryptionshield.emit()
+
+func popup_passrockets_powerup():
+	popup_passrockets.emit()
+
+func popup_datapacketbomb_powerup():
+	popup_datapacketbomb.emit()

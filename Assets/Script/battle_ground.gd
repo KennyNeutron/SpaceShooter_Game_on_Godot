@@ -27,6 +27,15 @@ var power_up_scenes = [
 @onready var hit_sound = $SFX/HitSound
 @onready var explode_sound = $SFX/ExplodeSound
 
+@onready var powerup_medkit_description = $FirstCollidePowerUp/MedkitDescription
+@onready var powerup_antivirus_description = $FirstCollidePowerUp/AntiVirusDescription
+@onready var powerup_firewallCannons_description = $FirstCollidePowerUp/FirewallDescription
+@onready var powerup_encryptionshield_description = $FirstCollidePowerUp/ShieldDescription
+@onready var powerup_pocketrockets_description = $FirstCollidePowerUp/PassRocketsDescription
+@onready var powerup_datapacketbomb_description = $FirstCollidePowerUp/DPBDescription
+
+var description_timer = 5
+
 var player = null
 var score := 0:
 	set(value):
@@ -37,6 +46,13 @@ var last_powerups_spawn_time = 0
 
 @onready var time_label = $UILayer/HUD/Timer/time
 var time = 0.0
+
+var FlagBits_PowerUp_Medkit = false
+var FlagBits_PowerUp_AntiVirus = false
+var FlagBits_PowerUp_FireWallCannons = false
+var FlagBits_PowerUp_EncryptionShield = false
+var FlagBits_PowerUp_PassRockets = false
+var FlagBits_PowerUp_DataPacketBomb = false
 
 @onready var playerhp_label = $UILayer/HUD/PlayerHp/playerhp
 
@@ -123,6 +139,12 @@ func player_data():
 	player.shield.connect(player_spawn_shield)
 	player.prockets.connect(password_rockets)
 	player.stop.connect(stop)
+	player.popup_medkit.connect(medkitPopup_description)
+	player.popup_antivirus.connect(antivirusPopup_description)
+	player.popup_firewallcannons.connect(firewallcannonsPopup_description)
+	player.popup_encryptionshield.connect(encryptionshieldPopup_description)
+	player.popup_passrockets.connect(passrocketsPopup_description)
+	player.popup_datapacketbomb.connect(datapacketbomb_description)
 
 func add_life(recover: int) -> void:
 	autoload.lives += recover
@@ -191,3 +213,66 @@ func encryption_shields():
 	
 func stop():
 	set_process(false)
+
+func medkitPopup_description():
+	powerup_medkit_description.visible = true
+	get_tree().paused = true
+	medkit_description_hide()
+
+func medkit_description_hide():
+	await get_tree().create_timer(description_timer).timeout
+	powerup_medkit_description.hide()
+	get_tree().paused = false
+
+func antivirusPopup_description():
+	powerup_antivirus_description.visible = true
+	get_tree().paused = true
+	antivirus_description_hide()
+
+func antivirus_description_hide():
+	await get_tree().create_timer(description_timer).timeout
+	powerup_antivirus_description.hide()
+	get_tree().paused = false
+
+func firewallcannonsPopup_description():
+	powerup_firewallCannons_description.visible = true
+	get_tree().paused = true
+	firewallcannons_description_hide()
+
+func firewallcannons_description_hide():
+	await get_tree().create_timer(description_timer).timeout
+	powerup_firewallCannons_description.hide()
+	get_tree().paused = false
+
+func encryptionshieldPopup_description():
+	powerup_encryptionshield_description.visible = true
+	get_tree().paused = true
+	encryptionshield_description_hide()
+	
+func encryptionshield_description_hide():
+	await get_tree().create_timer(description_timer).timeout
+	powerup_encryptionshield_description.hide()
+	get_tree().paused = false
+	
+func passrocketsPopup_description():
+	powerup_pocketrockets_description.visible = true
+	get_tree().paused = true
+	passrockets_description_hide()
+
+func passrockets_description_hide():
+	await get_tree().create_timer(description_timer).timeout
+	powerup_pocketrockets_description.hide()
+	get_tree().paused = false
+	
+func datapacketbomb_description():
+	powerup_datapacketbomb_description.visible = true
+	get_tree().paused = true
+	datapacketbomb_description_hide()
+
+func datapacketbomb_description_hide():
+	await get_tree().create_timer(description_timer).timeout
+	powerup_datapacketbomb_description.hide()
+	get_tree().paused = false
+	
+	
+	

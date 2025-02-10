@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxof6c7whvbf2"]
+
+[ext_resource type="FontFile" uid="uid://c80ctkfp0xdeo" path="res://Assets/Art/Another Art/clacon2.woff2" id="1_mjdv8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpxe1"]
+bg_color = Color(0.26656, 0.0112, 0.28, 0.784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="FirewallDescription" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 263.0
+offset_right = 452.0
+offset_bottom = 675.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kpxe1")
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 34.0
+offset_right = 415.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("1_mjdv8")
+theme_override_font_sizes/font_size = 24
+text = "Firewall Cannons 
+The art of Passphrase Encryptiion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="description" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 102.0
+offset_right = 403.0
+offset_bottom = 429.0
+theme_override_fonts/font = ExtResource("1_mjdv8")
+theme_override_font_sizes/font_size = 22
+text = "Description in Game: 
+\"Shoots blazing energy to block
+and neutralize malware bots trying
+to breach your defenses.\"
+
+Real-Life Parallel:
+Firewalls act as barriers that
+prevent unauthorized access to
+your computer or network. They
+filter out malicious data packets
+to keep your system secure.
+
+Tip for Players: 
+\"Always keep your firewall turned
+on to stop unwanted intrusions!\""
