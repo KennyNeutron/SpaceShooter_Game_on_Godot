@@ -42,7 +42,8 @@ var score := 0:
 		score = value
 		hud.score = score
 var high_score
-var last_powerups_spawn_time = 0
+var last_powerups_spawn_time = -30
+var next_powerup_time = randi() % 11 + 10
 
 @onready var time_label = $UILayer/HUD/Timer/time
 var time = 0.0
@@ -158,9 +159,10 @@ func time_start(delta):
 	
 	time_label.text = "%02d:%02d" % [minutes, seconds]
 	
-	if total_seconds - last_powerups_spawn_time >= 30:
+	if total_seconds - last_powerups_spawn_time >= next_powerup_time:
 		spawn_power_up()
 		last_powerups_spawn_time = total_seconds
+		next_powerup_time = randi() % 11 + randi_range(9,21)
 
 func spawn_power_up():
 	var random_power_up_scene = power_up_scenes[randi() % len(power_up_scenes)].instantiate()
