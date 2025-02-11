@@ -154,6 +154,7 @@ texture = SubResource("CanvasTexture_j83uu")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/scoresystemtxt/TextureRect"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
 offset_right = 381.0
@@ -212,6 +213,7 @@ texture = SubResource("CanvasTexture_j83uu")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/timeanddifficulty/TextureRect"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
 offset_right = 381.0
@@ -269,6 +271,7 @@ texture = SubResource("CanvasTexture_j83uu")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/playerlives/TextureRect"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
 offset_right = 381.0

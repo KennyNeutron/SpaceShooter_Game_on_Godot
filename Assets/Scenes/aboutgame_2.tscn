@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bssajx12tn8kc" path="res://Assets/Art/etool_1738240392111.png" id="6_ubxyc"]
 [ext_resource type="Texture2D" uid="uid://dpnomlb0lx3jv" path="res://Assets/Art/Another Art/flame.png" id="8_lqlm5"]
 [ext_resource type="Texture2D" uid="uid://brglbt3tghshp" path="res://Assets/MissilePack/etool_1738410270768.png" id="8_omleg"]
-[ext_resource type="Texture2D" uid="uid://byrjoc47nswfd" path="res://Assets/Art/transparentDark05.png" id="9_anksw"]
-[ext_resource type="Texture2D" uid="uid://bgr70xgkqmr04" path="res://Assets/Art/transparentDark49.png" id="10_h4dc2"]
+[ext_resource type="Texture2D" uid="uid://dnlcynpa3pa4j" path="res://Assets/Art/1739279553299-Standard.png" id="10_rljru"]
 [ext_resource type="Texture2D" uid="uid://dfe1e2nomfh1c" path="res://Assets/Art/Another Art/spaceships.png" id="11_gv80q"]
+[ext_resource type="Texture2D" uid="uid://b66xkpeg33n4" path="res://Assets/Art/1739279665881-Standard.png" id="11_toivr"]
 [ext_resource type="Texture2D" uid="uid://5qea8frywfgg" path="res://Assets/Art/Right.png" id="12_6rgxs"]
 [ext_resource type="Texture2D" uid="uid://dbjwondexiq38" path="res://Assets/Art/Left.png" id="13_becy2"]
 
@@ -64,6 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="powerupstxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 90.0
 offset_right = 132.0
@@ -133,6 +134,7 @@ texture = SubResource("CanvasTexture_sulfk")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/powerupstxt/TextureRect"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
 offset_right = 381.0
@@ -148,6 +150,7 @@ text = "~ Different power-ups are available during gameplay.
 vertical_alignment = 1
 
 [node name="gamecontrolstxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 250.0
 offset_right = 155.0
@@ -167,23 +170,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.5
-offset_top = 23.0
-offset_right = 66.5
-offset_bottom = 133.0
+offset_left = -71.0
+offset_top = 26.0
+offset_right = 59.0
+offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/gamecontrolstxt/powerupscontainer"]
-position = Vector2(57.5, 47)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_anksw")
+position = Vector2(70, 35)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("10_rljru")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Control/gamecontrolstxt/powerupscontainer"]
-position = Vector2(57.5, 46)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("10_h4dc2")
+position = Vector2(95, 80)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("11_toivr")
 
 [node name="TextureRect" type="TextureRect" parent="Control/gamecontrolstxt"]
 self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
@@ -196,6 +199,8 @@ texture = SubResource("CanvasTexture_sulfk")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/gamecontrolstxt/TextureRect"]
+visible = false
+layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
 offset_right = 381.0
@@ -209,7 +214,25 @@ text = "~ The game is controlled using a joystick, allowing
   during gameplay."
 vertical_alignment = 1
 
+[node name="text2" type="Label" parent="Control/gamecontrolstxt/TextureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 359.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_cv8g5")
+theme_override_font_sizes/font_size = 14
+text = "~ Players can control their character using the
+keyboard. The WASD keys allow movement in all
+directions, with W for up, A for left, S for down,
+and D for right. Alternatively, players can use
+the Arrow Keys to move in the same way."
+vertical_alignment = 1
+
 [node name="enemytypetxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 430.0
 offset_right = 159.0
@@ -223,6 +246,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="normalenemytxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 490.0
 offset_right = 155.0
@@ -265,6 +289,7 @@ texture = SubResource("CanvasTexture_sulfk")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/normalenemytxt/TextureRect"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
 offset_right = 381.0
@@ -280,6 +305,7 @@ text = "~ Speed: Slow
 vertical_alignment = 1
 
 [node name="burtenemytxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 650.0
 offset_right = 149.0
@@ -322,6 +348,7 @@ texture = SubResource("CanvasTexture_sulfk")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/burtenemytxt/TextureRect"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
 offset_right = 323.0
