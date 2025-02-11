@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dbhfgknblto0f"]
+[gd_scene load_steps=29 format=3 uid="uid://dbhfgknblto0f"]
 
 [ext_resource type="Script" path="res://Assets/Script/battle_ground.gd" id="1_wpbp7"]
 [ext_resource type="PackedScene" uid="uid://dctivcvvd5cq6" path="res://Assets/Scenes/player.tscn" id="2_flekx"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dxof6c7whvbf2" path="res://Assets/Scenes/firewall_description.tscn" id="20_uaw4v"]
 [ext_resource type="PackedScene" uid="uid://sg5gihu0kp3" path="res://Assets/Scenes/p_rockets_description.tscn" id="21_eey0t"]
 [ext_resource type="PackedScene" uid="uid://bgta6nm8ey38v" path="res://Assets/Scenes/dpb_description.tscn" id="22_xc2yw"]
-[ext_resource type="PackedScene" uid="uid://60fy3sx6uroc" path="res://Assets/Scenes/the_most_ignore_rule.tscn" id="23_6soes"]
 [ext_resource type="PackedScene" uid="uid://fyj11wk464yy" path="res://Assets/Scenes/most_ignore_rule_description.tscn" id="23_13noq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy3ag"]
@@ -206,8 +205,6 @@ visible = false
 
 [node name="MostIgnoreRuleDescription" parent="FirstCollidePowerUp" instance=ExtResource("23_13noq")]
 visible = false
-
-[node name="TheMostIgnoreRule" parent="." instance=ExtResource("23_6soes")]
 
 [connection signal="pressed" from="PauseUI/Pause/PausePanel/Resume" to="PauseUI/Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseUI/Pause/PausePanel/Resume/Resume" to="PauseUI/Pause" method="_on_resume_pressed"]

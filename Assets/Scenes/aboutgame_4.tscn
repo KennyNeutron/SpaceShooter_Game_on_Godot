@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://btolfpccvqhcw"]
+[gd_scene load_steps=12 format=3 uid="uid://btolfpccvqhcw"]
 
 [ext_resource type="Script" path="res://Assets/Script/aboutgame_4.gd" id="1_0k2gl"]
 [ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="1_iyrxv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bssajx12tn8kc" path="res://Assets/Art/etool_1738240392111.png" id="5_dkvqa"]
 [ext_resource type="Texture2D" uid="uid://bm7d2u2jqq1iu" path="res://Assets/Art/Another Art/etool_1738292255514.png" id="6_ycl2t"]
 [ext_resource type="Texture2D" uid="uid://dbjwondexiq38" path="res://Assets/Art/Left.png" id="7_3clqc"]
+[ext_resource type="Texture2D" uid="uid://b1hrfyh8chjen" path="res://Assets/Art/Another Art/Skillicon13_18.png" id="8_3llq3"]
 [ext_resource type="Texture2D" uid="uid://d8tj60srjfi5" path="res://Assets/Art/Another Art/playButtonHighlighted.png" id="8_hr340"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_k3skg"]
@@ -29,6 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="passwordrocketstxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 50.0
 offset_right = 195.0
@@ -77,6 +79,7 @@ texture = SubResource("CanvasTexture_k3skg")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/passwordrocketstxt/TextureRect"]
+layout_mode = 0
 offset_left = 12.0
 offset_top = 9.0
 offset_right = 390.0
@@ -98,6 +101,7 @@ to keep track of them."
 vertical_alignment = 1
 
 [node name="medkittxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 250.0
 offset_right = 107.0
@@ -141,6 +145,7 @@ texture = SubResource("CanvasTexture_k3skg")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/medkittxt/TextureRect"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 11.0
 offset_right = 406.0
@@ -161,6 +166,7 @@ keep your system patched to recover quickly from threats."
 vertical_alignment = 1
 
 [node name="datapocketsbombtxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 450.0
 offset_right = 195.0
@@ -204,6 +210,7 @@ texture = SubResource("CanvasTexture_k3skg")
 metadata/_edit_group_ = true
 
 [node name="text" type="Label" parent="Control/datapocketsbombtxt/TextureRect"]
+layout_mode = 0
 offset_left = 12.0
 offset_top = 9.0
 offset_right = 390.0
@@ -223,17 +230,77 @@ Tip for Players: Set up packet filters on your network
 to prevent malicious traffic."
 vertical_alignment = 1
 
-[node name="prevbutton" type="TouchScreenButton" parent="Control"]
-position = Vector2(50, 912)
-scale = Vector2(0.4, 0.4)
-texture_normal = ExtResource("7_3clqc")
+[node name="themostignorerule" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 665.0
+offset_right = 232.0
+offset_bottom = 695.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 20
+text = "The Most Ignore Rule"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="playbutton" type="TouchScreenButton" parent="Control"]
-position = Vector2(350, 914)
-scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("8_hr340")
+[node name="powerupscontainer" type="TextureRect" parent="Control/themostignorerule"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 39.0
+offset_right = 6.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/themostignorerule/powerupscontainer"]
+position = Vector2(58, 82)
+scale = Vector2(2, 2)
+texture = ExtResource("8_3llq3")
+
+[node name="TextureRect" type="TextureRect" parent="Control/themostignorerule"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 83.0
+offset_top = 31.0
+offset_right = 480.0
+offset_bottom = 241.0
+texture = SubResource("CanvasTexture_k3skg")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/themostignorerule/TextureRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 390.0
+offset_bottom = 156.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_bpyj3")
+theme_override_font_sizes/font_size = 14
+text = "Description in Game: A failsafe protocol that
+automatically detects and corrects security mistakes
+before they lead to disaster.
+
+Real-Life Parallel: Most cybersecurity breaches happen
+due to human error—weak passwords, clicking on
+malicious links, or ignoring security alerts.
+This power-up acts as an automated safeguard, 
+ust like AI-driven cybersecurity tools that
+monitor and prevent mistakes.
+
+Tip for Players: Enable multi-factor authentication, 
+verify sources, and never ignore security warnings!"
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 20.0
 offset_top = 681.0
@@ -250,6 +317,16 @@ Amazona, Raizen Rei V.                  Pulleros, Karl A.
 Magboo, Lorenz M.                       Fatal, Rey Ben B.
 
 De Guzman, Dominick F.                  Dimaculangan, Rey Angelo L."
+
+[node name="prevbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(50, 940)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_3clqc")
+
+[node name="playbutton" type="TouchScreenButton" parent="Control"]
+position = Vector2(350, 940)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("8_hr340")
 
 [connection signal="pressed" from="Control/prevbutton" to="." method="_on_prevbutton_pressed"]
 [connection signal="pressed" from="Control/playbutton" to="." method="_on_playbutton_pressed"]
