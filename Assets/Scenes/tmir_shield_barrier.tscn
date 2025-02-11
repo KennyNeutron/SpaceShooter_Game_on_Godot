@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://b7tg7mbdmyu5s"]
+
+[ext_resource type="Script" path="res://Assets/Script/tmir_shield_barrier.gd" id="1_7mft3"]
+[ext_resource type="Texture2D" uid="uid://dvgisubex8aci" path="res://Assets/Art/Another Art/pipo-btleffect208_192.png" id="1_082xg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb5j0"]
+atlas = ExtResource("1_082xg")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tf0b"]
+atlas = ExtResource("1_082xg")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8rlw"]
+atlas = ExtResource("1_082xg")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ue4s"]
+atlas = ExtResource("1_082xg")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uprmh"]
+atlas = ExtResource("1_082xg")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fndrt"]
+atlas = ExtResource("1_082xg")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osbvc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb5j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tf0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8rlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ue4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uprmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fndrt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TMIRShieldBarrier" type="Area2D"]
+position = Vector2(-47, -9)
+collision_layer = 1024
+collision_mask = 10
+script = ExtResource("1_7mft3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(120, 1057)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_osbvc")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(245, 1057)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_osbvc")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(382, 1057)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_osbvc")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(518, 1057)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_osbvc")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(42, 1031, 70, 997, 104, 984, 138, 987, 165, 1003, 175, 1019, 195, 998, 215, 987, 242, 985, 274, 993, 293, 1008, 307, 1026, 328, 1001, 352, 988, 376, 984, 403, 990, 423, 1001, 437, 1018, 442, 1030, 455, 1008, 483, 989, 514, 984, 541, 991, 563, 1003, 575, 1020, 585, 1035, 584, 1100, 41, 1103)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

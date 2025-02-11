@@ -7,7 +7,8 @@ var power_up_scenes = [
 	preload("res://Assets/Scenes/firewall_power_ups.tscn"),
 	preload("res://Assets/Scenes/en_shield_power_up.tscn"),
 	preload("res://Assets/Scenes/dpb_power_ups.tscn"),
-	preload("res://Assets/Scenes/antivirus_power_up.tscn")
+	preload("res://Assets/Scenes/antivirus_power_up.tscn"),
+	preload("res://Assets/Scenes/the_most_ignore_rule.tscn")
 ]
 
 @export var missile_scene: PackedScene = preload("res://Assets/Scenes/antivirus_missle.tscn")
@@ -15,6 +16,7 @@ var power_up_scenes = [
 @export var datapocketbomb_scene: PackedScene = preload("res://Assets/Scenes/data_pocket_bomb.tscn")
 @export var encryptionshield_scene: PackedScene = preload("res://Assets/Scenes/encryption_shield.tscn")
 @export var passwordrockets_scene: PackedScene = preload("res://Assets/Scenes/password_rockets.tscn")
+@export var mostignorerule_barrier_scene: PackedScene = preload("res://Assets/Scenes/tmir_shield_barrier.tscn")
 
 @onready var player_spawn = $PlayerSpawnpoint
 @onready var bullet_container = $BulletContainer
@@ -33,10 +35,12 @@ var power_up_scenes = [
 @onready var powerup_encryptionshield_description = $FirstCollidePowerUp/ShieldDescription
 @onready var powerup_pocketrockets_description = $FirstCollidePowerUp/PassRocketsDescription
 @onready var powerup_datapacketbomb_description = $FirstCollidePowerUp/DPBDescription
+@onready var powerup_mostignorerule_description = $FirstCollidePowerUp/MostIgnoreRuleDescription
 
 var description_timer = 5
 
 var player = null
+var tmir = null
 var score := 0:
 	set(value):
 		score = value
@@ -54,6 +58,7 @@ var FlagBits_PowerUp_FireWallCannons = false
 var FlagBits_PowerUp_EncryptionShield = false
 var FlagBits_PowerUp_PassRockets = false
 var FlagBits_PowerUp_DataPacketBomb = false
+var FlagBits_PowerUp_MostIgnoreRuleBarrier = false
 
 @onready var playerhp_label = $UILayer/HUD/PlayerHp/playerhp
 
@@ -102,6 +107,8 @@ func player_killed():
 	gameover_screen.set_score(score)
 	gameover_screen.set_high_score(high_score)
 	save_game_data()
+	
+	remove_all_powerups()
 
 	await get_tree().create_timer(2.5).timeout
 	
@@ -139,6 +146,7 @@ func player_data():
 	player.pocketbomb.connect(pocket_bomb)
 	player.shield.connect(player_spawn_shield)
 	player.prockets.connect(password_rockets)
+	player.ignorerule_barrier.connect(themostignorerule)
 	player.stop.connect(stop)
 	player.popup_medkit.connect(medkitPopup_description)
 	player.popup_antivirus.connect(antivirusPopup_description)
@@ -146,6 +154,7 @@ func player_data():
 	player.popup_encryptionshield.connect(encryptionshieldPopup_description)
 	player.popup_passrockets.connect(passrocketsPopup_description)
 	player.popup_datapacketbomb.connect(datapacketbomb_description)
+	player.popup_mostignorerule.connect(mostignorerulePopup_description)
 
 func add_life(recover: int) -> void:
 	autoload.lives += recover
@@ -212,7 +221,21 @@ func encryption_shields():
 	var es = encryptionshield_scene.instantiate()
 	es.position = Vector2()  # Set local position
 	player.add_child(es)
-	
+
+func themostignorerule():
+	call_deferred("mostignorerule_barrier")
+
+func mostignorerule_barrier():
+	tmir = mostignorerule_barrier_scene.instantiate()
+	tmir.global_position = Vector2(-47, -9)
+	#print("Spawning power-up barrier at position:", tmir.global_position)
+	powerup_container.call_deferred("add_child", tmir)
+
+func remove_all_powerups():
+	if tmir != null and tmir.is_inside_tree():
+		tmir.queue_free()
+		tmir = null
+
 func stop():
 	set_process(false)
 
@@ -276,5 +299,12 @@ func datapacketbomb_description_hide():
 	powerup_datapacketbomb_description.hide()
 	get_tree().paused = false
 	
+func mostignorerulePopup_description():
+	powerup_mostignorerule_description.visible = true
+	get_tree().paused = true
+	mostignorerule_description_hide()
 	
-	
+func mostignorerule_description_hide():
+	await get_tree().create_timer(description_timer).timeout
+	powerup_mostignorerule_description.hide()
+	get_tree().paused = false
