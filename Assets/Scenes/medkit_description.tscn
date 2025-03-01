@@ -22,8 +22,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 57.0
 offset_top = 263.0
-offset_right = 452.0
-offset_bottom = 675.0
+offset_right = 447.0
+offset_bottom = 522.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6edh5")
@@ -36,8 +36,8 @@ offset_right = 407.0
 offset_bottom = 77.0
 theme_override_fonts/font = ExtResource("1_j5k71")
 theme_override_font_sizes/font_size = 24
-text = "Medkit  
-Reducing your Digital FootPrint"
+text = "Data Phantom – Reducing Your
+Digital Footprint"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -45,22 +45,14 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 35.0
 offset_top = 102.0
-offset_right = 420.0
-offset_bottom = 429.0
+offset_right = 387.0
+offset_bottom = 273.0
 theme_override_fonts/font = ExtResource("1_j5k71")
 theme_override_font_sizes/font_size = 22
-text = "Description in Game: 
-\"Restores your ship’s health
-and keeps you in the fight
-against cyber threats.\"
+text = "🕵️ Minimize personal tracking.
+Use alias emails, virtual phone
+numbers, and disable unnecessary
+background tracking.
 
-Real-Life Parallel: 
-In cybersecurity, regular system
-updates and backups act as
-a \"medkit,\" ensuring your data can
-recover after an attack.
-
-Tip for Players: 
-\"Back up your data regularly and
-keep your system patched to recover
-quickly from threats.\""
+✔️ Stay online while keeping
+your identity hidden."

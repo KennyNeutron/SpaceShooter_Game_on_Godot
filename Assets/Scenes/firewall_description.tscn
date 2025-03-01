@@ -22,8 +22,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 57.0
 offset_top = 263.0
-offset_right = 452.0
-offset_bottom = 675.0
+offset_right = 457.0
+offset_bottom = 550.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpxe1")
@@ -36,31 +36,23 @@ offset_right = 415.0
 offset_bottom = 77.0
 theme_override_fonts/font = ExtResource("1_mjdv8")
 theme_override_font_sizes/font_size = 24
-text = "Firewall Cannons 
-The art of Passphrase Encryptiion"
+text = "Cipher Sentinel – The Art of 
+Passphrase Encryption"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="description" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 102.0
-offset_right = 403.0
-offset_bottom = 429.0
+offset_left = 25.0
+offset_top = 105.0
+offset_right = 421.0
+offset_bottom = 290.0
 theme_override_fonts/font = ExtResource("1_mjdv8")
 theme_override_font_sizes/font_size = 22
-text = "Description in Game: 
-\"Shoots blazing energy to block
-and neutralize malware bots trying
-to breach your defenses.\"
+text = "🔑 Use passphrases instead of
+passwords. Combine random words
+with numbers and symbols
+(e.g., Sunset-Tiger!42&Nebula-Wolf).
 
-Real-Life Parallel:
-Firewalls act as barriers that
-prevent unauthorized access to
-your computer or network. They
-filter out malicious data packets
-to keep your system secure.
-
-Tip for Players: 
-\"Always keep your firewall turned
-on to stop unwanted intrusions!\""
+✔️ Harder to crack, easier
+to remember."

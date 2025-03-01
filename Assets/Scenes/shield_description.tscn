@@ -20,10 +20,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 57.0
-offset_top = 263.0
-offset_right = 452.0
-offset_bottom = 675.0
+offset_left = 63.0
+offset_top = 335.0
+offset_right = 427.0
+offset_bottom = 587.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6sud4")
@@ -32,12 +32,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6sud4")
 layout_mode = 0
 offset_left = 19.0
 offset_top = 34.0
-offset_right = 415.0
-offset_bottom = 77.0
+offset_right = 381.0
+offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("1_6arsm")
 theme_override_font_sizes/font_size = 24
-text = "Encryption Shields
-Protecting Offline Systems"
+text = "Stealth Gateway – Protecting
+Offline Systems"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -45,22 +45,14 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 30.0
 offset_top = 102.0
-offset_right = 404.0
-offset_bottom = 429.0
+offset_right = 397.0
+offset_bottom = 269.0
 theme_override_fonts/font = ExtResource("1_6arsm")
 theme_override_font_sizes/font_size = 22
-text = "Description in Game:
-\"A temporary shield that scrambles
-your data, making it unreadable
-to attackers.\"
+text = "🛰 Avoid plugging unknown USBs.
+Hackers use infected drives
+to install malware.
 
-Real-Life Parallel:
-Encryption transforms your data
-into a secure format that can only
-be accessed with a key, ensuring
-its safety during transmission.
-
-Tip for Players:
-\"Use encryption tools to secure
-sensitive information, especially
-when sharing it online.\""
+✔️ Scan devices before use
+and isolate critical systems
+from unnecessary networks."

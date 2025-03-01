@@ -12,7 +12,6 @@ texture_normal = ExtResource("1_56u5f")
 action = "pause"
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("2_0nk1f")]
-visible = false
 offset_left = 147.0
 offset_top = -250.0
 offset_right = 447.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dv4v3rkmid7s5"]
+[gd_scene load_steps=15 format=3 uid="uid://dv4v3rkmid7s5"]
 
 [ext_resource type="Texture2D" uid="uid://bptutawc4r50r" path="res://Assets/Art/462544050_1308114687210240_4620716762410217206_n (3).png" id="1_eeqt2"]
 [ext_resource type="Script" path="res://Assets/Script/aboutgame_3.gd" id="1_undub"]
@@ -9,9 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://o841yy3bkxts" path="res://Assets/Art/Another Art/etool_1738303780358.png" id="6_7ki6d"]
 [ext_resource type="Texture2D" uid="uid://dllaxhjjgb7p4" path="res://Assets/Art/Another Art/etool_1738307323821.png" id="7_4vmgc"]
 [ext_resource type="Texture2D" uid="uid://5qea8frywfgg" path="res://Assets/Art/Right.png" id="8_byxks"]
+[ext_resource type="Texture2D" uid="uid://sykqx4sbl12w" path="res://Assets/Art/Another Art/etool_1738307568263.png" id="9_h82yr"]
 [ext_resource type="Texture2D" uid="uid://dbjwondexiq38" path="res://Assets/Art/Left.png" id="9_ytpiw"]
+[ext_resource type="Texture2D" uid="uid://dm2hi4wfm3fhh" path="res://Assets/Art/Another Art/12.png" id="10_idaj7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m16y0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d1ale"]
 
 [node name="aboutgame3" type="Node2D"]
 script = ExtResource("1_undub")
@@ -30,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="enemytypetxt" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 50.0
 offset_right = 233.0
@@ -42,7 +47,8 @@ text = "Power-Up Mechanics"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="firewallcanonstxt" type="Label" parent="Control"]
+[node name="ciphersentinel" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 100.0
 offset_right = 185.0
@@ -51,46 +57,47 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_1842t")
 theme_override_font_sizes/font_size = 20
-text = "Firewall Canons"
+text = "Cipher Sentinel – The Art of Passphrase Encryption"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="powerupscontainer" type="TextureRect" parent="Control/firewallcanonstxt"]
+[node name="powerupscontainer" type="TextureRect" parent="Control/ciphersentinel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = 14.0
-offset_right = 30.0
-offset_bottom = 124.0
+offset_left = -265.0
+offset_top = 18.0
+offset_right = -134.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/firewallcanonstxt/powerupscontainer"]
-position = Vector2(44, 51)
+[node name="Sprite2D" type="Sprite2D" parent="Control/ciphersentinel/powerupscontainer"]
+position = Vector2(46, 22)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_xbar3")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Control/firewallcanonstxt/powerupscontainer"]
-position = Vector2(81, 120)
+[node name="Sprite2D2" type="Sprite2D" parent="Control/ciphersentinel/powerupscontainer"]
+position = Vector2(75, 70)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_2e82j")
 
-[node name="TextureRect" type="TextureRect" parent="Control/firewallcanonstxt"]
+[node name="TextureRect" type="TextureRect" parent="Control/ciphersentinel"]
 self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
 layout_mode = 0
 offset_left = 85.0
 offset_top = 33.0
-offset_right = 487.0
-offset_bottom = 196.0
+offset_right = 479.0
+offset_bottom = 132.0
 texture = SubResource("CanvasTexture_m16y0")
 metadata/_edit_group_ = true
 
-[node name="text" type="Label" parent="Control/firewallcanonstxt/TextureRect"]
+[node name="text" type="Label" parent="Control/ciphersentinel/TextureRect"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 9.0
 offset_right = 323.0
@@ -99,160 +106,216 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_1842t")
 theme_override_font_sizes/font_size = 14
-text = "Description in Game: Shoots blazing energy to block and 
-neutralize malware bots trying to breach your defenses.
+text = "🔑 Use passphrases instead of passwords.
+Combine random words with numbers and symbols
+(e.g., Sunset-Tiger!42&Nebula-Wolf).
 
-Real-Life Parallel: Firewalls act as barriers that 
-prevent unauthorized access to your computer or network. 
-They filter out malicious data packets to keep your 
-system secure.
-
-Tip for Players: Always keep your firewall turned 
-on to stop unwanted intrusions!"
+✔️ Harder to crack, easier to remember."
 vertical_alignment = 1
 
-[node name="antivirusmissile" type="Label" parent="Control"]
+[node name="digitalmirage" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
-offset_top = 320.0
-offset_right = 205.0
-offset_bottom = 350.0
+offset_top = 270.0
+offset_right = 495.0
+offset_bottom = 300.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_1842t")
 theme_override_font_sizes/font_size = 20
-text = "Antivirus Missile"
+text = "Digital Mirage – Spotting AI-Generated Attacks"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="powerupscontainer" type="TextureRect" parent="Control/antivirusmissile"]
+[node name="powerupscontainer" type="TextureRect" parent="Control/digitalmirage"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = 14.0
-offset_right = 30.0
-offset_bottom = 124.0
+offset_left = -239.0
+offset_top = 25.0
+offset_right = -132.0
+offset_bottom = 107.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/antivirusmissile/powerupscontainer"]
-position = Vector2(59, 87)
+[node name="Sprite2D" type="Sprite2D" parent="Control/digitalmirage/powerupscontainer"]
+position = Vector2(61, 54)
 rotation = -0.872665
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("5_ykjlo")
 
-[node name="TextureRect" type="TextureRect" parent="Control/antivirusmissile"]
+[node name="TextureRect" type="TextureRect" parent="Control/digitalmirage"]
 self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
 layout_mode = 0
 offset_left = 98.0
 offset_top = 31.0
-offset_right = 486.0
-offset_bottom = 194.0
+offset_right = 481.0
+offset_bottom = 151.0
 texture = SubResource("CanvasTexture_m16y0")
 metadata/_edit_group_ = true
 
-[node name="text" type="Label" parent="Control/antivirusmissile/TextureRect"]
+[node name="text" type="Label" parent="Control/digitalmirage/TextureRect"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 14.0
-offset_right = 402.0
-offset_bottom = 146.0
+offset_right = 379.0
+offset_bottom = 111.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_1842t")
 theme_override_font_sizes/font_size = 14
-text = "Description in Game: Fires explosive rocket that 
-eliminate multiple threats in a single blast.
+text = "🎭 Phishing isn't just emails anymore. Hackers use
+deepfake videos, AI-generated voices,
+and fake messages to trick people.
 
-Real-Life Parallel: Antivirus software scans and 
-removes malicious files from your devices, protecting
-them from infections.
-
-Tip for Players: Regularly update your antivirus 
-software to stay protected from new threats."
+✔️ Always verify sources before responding or
+sending sensitive data."
 vertical_alignment = 1
 
-[node name="encryptionshieldtxt" type="Label" parent="Control"]
+[node name="stealthgateway" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 35.0
-offset_top = 540.0
-offset_right = 205.0
-offset_bottom = 570.0
+offset_top = 460.0
+offset_right = 475.0
+offset_bottom = 490.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_1842t")
 theme_override_font_sizes/font_size = 20
-text = "Encryption Shield"
+text = "Stealth Gateway – Protecting Offline Systems
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="powerupscontainer" type="TextureRect" parent="Control/encryptionshieldtxt"]
+[node name="powerupscontainer" type="TextureRect" parent="Control/stealthgateway"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = 14.0
-offset_right = 30.0
-offset_bottom = 124.0
+offset_left = -235.0
+offset_top = 16.0
+offset_right = -105.0
+offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/encryptionshieldtxt/powerupscontainer"]
-position = Vector2(44, 51)
+[node name="Sprite2D" type="Sprite2D" parent="Control/stealthgateway/powerupscontainer"]
+position = Vector2(49, 33)
 rotation = -0.872665
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("6_7ki6d")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Control/encryptionshieldtxt/powerupscontainer"]
-position = Vector2(81, 120)
-scale = Vector2(0.1, 0.1)
+[node name="Sprite2D2" type="Sprite2D" parent="Control/stealthgateway/powerupscontainer"]
+position = Vector2(88, 83)
+scale = Vector2(0.0734375, 0.0718254)
 texture = ExtResource("7_4vmgc")
 
-[node name="TextureRect" type="TextureRect" parent="Control/encryptionshieldtxt"]
+[node name="TextureRect" type="TextureRect" parent="Control/stealthgateway"]
 self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
 layout_mode = 0
 offset_left = 117.0
 offset_top = 34.0
-offset_right = 498.0
-offset_bottom = 215.0
+offset_right = 477.0
+offset_bottom = 148.0
 texture = SubResource("CanvasTexture_m16y0")
 metadata/_edit_group_ = true
 
-[node name="text" type="Label" parent="Control/encryptionshieldtxt/TextureRect"]
+[node name="text" type="Label" parent="Control/stealthgateway/TextureRect"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 9.0
-offset_right = 377.0
-offset_bottom = 171.0
+offset_right = 347.0
+offset_bottom = 104.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_1842t")
 theme_override_font_sizes/font_size = 14
-text = "Description in Game: A temporary shield that 
-scrambles your data, making it unreadable 
-to attackers.
+text = "🛰 Avoid plugging unknown USBs. Hackers use
+infected drives to install malware.
 
-Real-Life Parallel: Encryption transforms your data 
-into a secure format that can only be accessed 
-with a key, ensuring its safety during transmission.
+✔️ Scan devices before use and isolate critical
+systems from unnecessary networks."
+vertical_alignment = 1
 
-Tip for Players: Use encryption tools to secure 
-sensitive information, especially when 
-sharing it online."
+[node name="thesilentecho" type="Label" parent="Control"]
+offset_left = 35.0
+offset_top = 660.0
+offset_right = 395.0
+offset_bottom = 690.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 20
+text = "The Silent Echo – Metadata Awareness"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="powerupscontainer" type="TextureRect" parent="Control/thesilentecho"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = 17.0
+offset_right = -97.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/thesilentecho/powerupscontainer"]
+position = Vector2(38.54, 23.29)
+scale = Vector2(0.0594922, 0.0638867)
+texture = ExtResource("9_h82yr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/thesilentecho/powerupscontainer"]
+position = Vector2(65, 69)
+scale = Vector2(0.6, 0.567241)
+texture = ExtResource("10_idaj7")
+
+[node name="TextureRect" type="TextureRect" parent="Control/thesilentecho"]
+self_modulate = Color(0.294118, 0.0431373, 0.4, 0.6)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 33.0
+offset_right = 488.0
+offset_bottom = 137.0
+texture = SubResource("CanvasTexture_d1ale")
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="Control/thesilentecho/TextureRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 369.0
+offset_bottom = 100.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_1842t")
+theme_override_font_sizes/font_size = 14
+text = "📡 Photos and files store hidden data.
+Hackers can extract location, time, and device info
+from metadata.
+
+✔️ Remove metadata before sharing sensitive files."
 vertical_alignment = 1
 
 [node name="nextbutton" type="TouchScreenButton" parent="Control"]
-position = Vector2(442, 913)
+position = Vector2(442, 900)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("8_byxks")
 
 [node name="prevbutton" type="TouchScreenButton" parent="Control"]
-position = Vector2(50, 912)
+position = Vector2(50, 900)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("9_ytpiw")
 

@@ -22,8 +22,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 57.0
 offset_top = 263.0
-offset_right = 452.0
-offset_bottom = 675.0
+offset_right = 432.0
+offset_bottom = 556.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4f6t7")
@@ -32,12 +32,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4f6t7")
 layout_mode = 0
 offset_left = 35.0
 offset_top = 34.0
-offset_right = 407.0
-offset_bottom = 77.0
+offset_right = 373.0
+offset_bottom = 86.0
 theme_override_fonts/font = ExtResource("1_0gd58")
 theme_override_font_sizes/font_size = 24
-text = "Antivirus Missiles
-Spotting Ai-Generated Attacks"
+text = "Digital Mirage – Spotting
+AI-Generated Attacks"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -45,22 +45,16 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 35.0
 offset_top = 102.0
-offset_right = 403.0
-offset_bottom = 429.0
+offset_right = 395.0
+offset_bottom = 307.0
 theme_override_fonts/font = ExtResource("1_0gd58")
 theme_override_font_sizes/font_size = 22
-text = "Description in Game:
-\"Fires explosive rockets that
-eliminate multiple threats
-in a single blast.\"
+text = "🎭 Phishing isn't just
+emails anymore. Hackers use
+deepfake videos, AI-generated
+voices, and fake messages
+to trick people.
 
-Real-Life Parallel: 
-Antivirus software scans and
-removes malicious files from
-your devices, protecting them
-from infections.
-
-Tip for Players:
-\"Regularly update your antivirus
-software to stay protected from
-new threats.\""
+✔️ Always verify sources before
+responding or sending
+sensitive data."

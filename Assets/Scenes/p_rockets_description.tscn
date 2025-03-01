@@ -22,8 +22,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 57.0
 offset_top = 259.0
-offset_right = 452.0
-offset_bottom = 693.0
+offset_right = 431.0
+offset_bottom = 505.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1poce")
@@ -36,8 +36,8 @@ offset_right = 415.0
 offset_bottom = 77.0
 theme_override_fonts/font = ExtResource("1_6hnky")
 theme_override_font_sizes/font_size = 24
-text = "Password Rockets
-MetaData Awareness"
+text = "The Silent Echo – Metadata 
+Awareness"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -46,22 +46,14 @@ layout_mode = 0
 offset_left = 30.0
 offset_top = 102.0
 offset_right = 404.0
-offset_bottom = 429.0
+offset_bottom = 284.0
 theme_override_fonts/font = ExtResource("1_6hnky")
 theme_override_font_sizes/font_size = 22
-text = "Description in Game:
-\"A high-damage projectile
-that targets specific enemies
-to remove their threat.\"
+text = "📡 Photos and files store
+hidden data. Hackers can extract
+location, time, and device
+info from metadata.
 
-Real-Life Parallel:
-Strong passwords act as the
-first line of defense against
-unauthorized access, targeting
-attackers and preventing breaches.
-
-Tip for Players:
-\"Create strong, unique passwords
-for every account, and use a
-password manager to keep
-track of them.\""
+✔️ Remove metadata before
+sharing sensitive files.
+"
