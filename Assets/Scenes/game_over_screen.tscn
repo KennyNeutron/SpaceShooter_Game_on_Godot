@@ -12,7 +12,7 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_yh2eq"]
 font = ExtResource("1_m21xy")
-font_size = 90
+font_size = 50
 font_color = Color(0.560333, 0, 0.82, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
@@ -66,18 +66,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_40lo3")
 
-[node name="GameOver" type="Label" parent="Panel"]
+[node name="You have been HACKED" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -114.5
-offset_top = 28.0
-offset_right = 119.5
-offset_bottom = 71.0
+offset_left = -159.5
+offset_top = 28.14
+offset_right = 165.5
+offset_bottom = 115.14
 grow_horizontal = 2
-text = "Game Over"
+text = "You have been
+HACKED!"
 label_settings = SubResource("LabelSettings_yh2eq")
+horizontal_alignment = 1
 
 [node name="HighScore" type="Label" parent="Panel"]
 layout_mode = 1
@@ -85,9 +87,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -203.5
-offset_top = 118.0
+offset_top = 130.0
 offset_right = 209.5
-offset_bottom = 164.0
+offset_bottom = 176.0
 grow_horizontal = 2
 text = "Hi-Score: 99999"
 label_settings = SubResource("LabelSettings_41egv")
@@ -100,9 +102,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -203.5
-offset_top = 174.0
-offset_right = 201.5
-offset_bottom = 249.0
+offset_top = 200.0
+offset_right = 47.5
+offset_bottom = 242.0
 grow_horizontal = 2
 text = "Score: 999"
 label_settings = SubResource("LabelSettings_ou4dr")

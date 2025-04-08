@@ -36,8 +36,7 @@ var power_up_scenes = [
 @onready var powerup_pocketrockets_description = $FirstCollidePowerUp/PassRocketsDescription
 @onready var powerup_datapacketbomb_description = $FirstCollidePowerUp/DPBDescription
 @onready var powerup_mostignorerule_description = $FirstCollidePowerUp/MostIgnoreRuleDescription
-
-var description_timer = 5
+@onready var exit_bttn_of_MIR = $FirstCollidePowerUp/MostIgnoreRuleDescription/exit_bttn_of_MIR
 
 var player = null
 var tmir = null
@@ -64,7 +63,7 @@ var FlagBits_PowerUp_MostIgnoreRuleBarrier = false
 
 func _ready() -> void:
 	player_data()
-
+	
 func save_game_data():
 	var savefile_data = FileAccess.open("user://save.data", FileAccess.WRITE)
 	savefile_data.store_32(high_score)
@@ -155,6 +154,12 @@ func player_data():
 	player.popup_passrockets.connect(passrocketsPopup_description)
 	player.popup_datapacketbomb.connect(datapacketbomb_description)
 	player.popup_mostignorerule.connect(mostignorerulePopup_description)
+	
+	if not exit_bttn_of_MIR.is_connected("pressed", Callable(self, "_on_exit_bttn_of_mir_pressed")):
+		exit_bttn_of_MIR.connect("pressed", Callable(self, "_on_exit_bttn_of_mir_pressed"))
+
+	
+	
 
 func add_life(recover: int) -> void:
 	autoload.lives += recover
@@ -242,69 +247,56 @@ func stop():
 func medkitPopup_description():
 	powerup_medkit_description.visible = true
 	get_tree().paused = true
-	medkit_description_hide()
 
-func medkit_description_hide():
-	await get_tree().create_timer(description_timer).timeout
-	powerup_medkit_description.hide()
+func _on_exit_bttn_of_medkit() -> void:
 	get_tree().paused = false
+	powerup_medkit_description.visible = false
 
 func antivirusPopup_description():
 	powerup_antivirus_description.visible = true
 	get_tree().paused = true
-	antivirus_description_hide()
 
-func antivirus_description_hide():
-	await get_tree().create_timer(description_timer).timeout
-	powerup_antivirus_description.hide()
+func _on_exit_bttn_of_antivirus() -> void:
 	get_tree().paused = false
+	powerup_antivirus_description.visible = false
 
 func firewallcannonsPopup_description():
 	powerup_firewallCannons_description.visible = true
 	get_tree().paused = true
-	firewallcannons_description_hide()
 
-func firewallcannons_description_hide():
-	await get_tree().create_timer(description_timer).timeout
-	powerup_firewallCannons_description.hide()
+func _on_exit_bttn_of_firewall() -> void:
 	get_tree().paused = false
+	powerup_firewallCannons_description.visible = false
 
 func encryptionshieldPopup_description():
-	powerup_encryptionshield_description.visible = true
 	get_tree().paused = true
-	encryptionshield_description_hide()
+	powerup_encryptionshield_description.visible = true
 	
-func encryptionshield_description_hide():
-	await get_tree().create_timer(description_timer).timeout
-	powerup_encryptionshield_description.hide()
+func _on_exit_bttn_of_eShields() -> void:
+	print("Exit button connected")
 	get_tree().paused = false
+	powerup_encryptionshield_description.visible = false
 	
 func passrocketsPopup_description():
 	powerup_pocketrockets_description.visible = true
 	get_tree().paused = true
-	passrockets_description_hide()
 
-func passrockets_description_hide():
-	await get_tree().create_timer(description_timer).timeout
-	powerup_pocketrockets_description.hide()
+func _on_exit_bttn_of_passrockets() -> void:
 	get_tree().paused = false
+	powerup_pocketrockets_description.visible = false
 	
 func datapacketbomb_description():
 	powerup_datapacketbomb_description.visible = true
 	get_tree().paused = true
-	datapacketbomb_description_hide()
 
-func datapacketbomb_description_hide():
-	await get_tree().create_timer(description_timer).timeout
-	powerup_datapacketbomb_description.hide()
+func _on_exit_bttn_of_dpb_pressed() -> void:
 	get_tree().paused = false
+	powerup_datapacketbomb_description.visible = false
 	
 func mostignorerulePopup_description():
 	powerup_mostignorerule_description.visible = true
 	get_tree().paused = true
-	mostignorerule_description_hide()
-	
-func mostignorerule_description_hide():
-	await get_tree().create_timer(description_timer).timeout
-	powerup_mostignorerule_description.hide()
+
+func _on_exit_bttn_of_mir_pressed() -> void:
 	get_tree().paused = false
+	powerup_mostignorerule_description.visible = false

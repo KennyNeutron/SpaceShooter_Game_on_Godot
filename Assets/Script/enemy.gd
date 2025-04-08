@@ -5,7 +5,7 @@ signal hit
 
 @export var speed = 150
 @export var durability = 20
-@export var points = 50
+@export var points = 10
 
 func _process(delta: float) -> void:
 	global_position.y += speed * delta

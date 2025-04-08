@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dbhfgknblto0f"]
+[gd_scene load_steps=31 format=3 uid="uid://dbhfgknblto0f"]
 
 [ext_resource type="Script" path="res://Assets/Script/battle_ground.gd" id="1_wpbp7"]
 [ext_resource type="PackedScene" uid="uid://dctivcvvd5cq6" path="res://Assets/Scenes/player.tscn" id="2_flekx"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://sg5gihu0kp3" path="res://Assets/Scenes/p_rockets_description.tscn" id="21_eey0t"]
 [ext_resource type="PackedScene" uid="uid://bgta6nm8ey38v" path="res://Assets/Scenes/dpb_description.tscn" id="22_xc2yw"]
 [ext_resource type="PackedScene" uid="uid://fyj11wk464yy" path="res://Assets/Scenes/most_ignore_rule_description.tscn" id="23_13noq"]
+[ext_resource type="Texture2D" uid="uid://cq1y6pmhyxxcr" path="res://Assets/Art/Another Art/CasualIcons_038.png" id="24_5186w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy3ag"]
 bg_color = Color(0.144567, 0.0510232, 0.206851, 1)
@@ -43,6 +44,9 @@ spread = 0.0
 initial_velocity_min = -1000.0
 initial_velocity_max = -1000.0
 gravity = Vector3(0, 0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7tfj"]
+size = Vector2(70, 70)
 
 [node name="BattleGround" type="Node2D"]
 script = ExtResource("1_wpbp7")
@@ -188,23 +192,121 @@ texture_normal = ExtResource("16_dhdjc")
 [node name="AntiVirusDescription" parent="FirstCollidePowerUp" instance=ExtResource("18_xytp0")]
 visible = false
 
+[node name="exit_bttn_of_AntiVirus" type="Button" parent="FirstCollidePowerUp/AntiVirusDescription"]
+process_mode = 3
+layout_mode = 0
+offset_left = 445.0
+offset_top = 253.0
+offset_right = 517.0
+offset_bottom = 325.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("24_5186w")
+
+[node name="exit_mobile" type="TouchScreenButton" parent="FirstCollidePowerUp/AntiVirusDescription/exit_bttn_of_AntiVirus"]
+position = Vector2(36, 36)
+shape = SubResource("RectangleShape2D_b7tfj")
+
 [node name="MedkitDescription" parent="FirstCollidePowerUp" instance=ExtResource("17_rppyl")]
 visible = false
+
+[node name="exit_bttn_of_Medkit" type="Button" parent="FirstCollidePowerUp/MedkitDescription"]
+process_mode = 3
+layout_mode = 0
+offset_left = 460.0
+offset_top = 254.0
+offset_right = 532.0
+offset_bottom = 326.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("24_5186w")
+
+[node name="exit_mobile" type="TouchScreenButton" parent="FirstCollidePowerUp/MedkitDescription/exit_bttn_of_Medkit"]
+position = Vector2(36, 36)
+shape = SubResource("RectangleShape2D_b7tfj")
 
 [node name="FirewallDescription" parent="FirstCollidePowerUp" instance=ExtResource("20_uaw4v")]
 visible = false
 
+[node name="exit_bttn_of_Firewall" type="Button" parent="FirstCollidePowerUp/FirewallDescription"]
+process_mode = 3
+layout_mode = 0
+offset_left = 473.0
+offset_top = 251.0
+offset_right = 545.0
+offset_bottom = 323.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("24_5186w")
+
+[node name="exit_mobile" type="TouchScreenButton" parent="FirstCollidePowerUp/FirewallDescription/exit_bttn_of_Firewall"]
+position = Vector2(36, 36)
+shape = SubResource("RectangleShape2D_b7tfj")
+
 [node name="ShieldDescription" parent="FirstCollidePowerUp" instance=ExtResource("20_erl30")]
 visible = false
+
+[node name="exit_bttn_of_EShields" type="Button" parent="FirstCollidePowerUp/ShieldDescription"]
+process_mode = 3
+layout_mode = 0
+offset_left = 443.0
+offset_top = 322.0
+offset_right = 515.0
+offset_bottom = 394.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("24_5186w")
+
+[node name="exit_mobile" type="TouchScreenButton" parent="FirstCollidePowerUp/ShieldDescription/exit_bttn_of_EShields"]
+position = Vector2(36, 36)
+shape = SubResource("RectangleShape2D_b7tfj")
 
 [node name="PassRocketsDescription" parent="FirstCollidePowerUp" instance=ExtResource("21_eey0t")]
 visible = false
 
+[node name="exit_bttn_of_PassRockets" type="Button" parent="FirstCollidePowerUp/PassRocketsDescription"]
+process_mode = 3
+layout_mode = 0
+offset_left = 449.0
+offset_top = 248.0
+offset_right = 521.0
+offset_bottom = 320.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("24_5186w")
+
+[node name="exit_mobile" type="TouchScreenButton" parent="FirstCollidePowerUp/PassRocketsDescription/exit_bttn_of_PassRockets"]
+position = Vector2(36, 36)
+shape = SubResource("RectangleShape2D_b7tfj")
+
 [node name="DPBDescription" parent="FirstCollidePowerUp" instance=ExtResource("22_xc2yw")]
 visible = false
 
+[node name="exit_bttn_of_DPB" type="Button" parent="FirstCollidePowerUp/DPBDescription"]
+process_mode = 3
+layout_mode = 0
+offset_left = 457.0
+offset_top = 334.0
+offset_right = 529.0
+offset_bottom = 406.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("24_5186w")
+
+[node name="exit_mobile" type="TouchScreenButton" parent="FirstCollidePowerUp/DPBDescription/exit_bttn_of_DPB"]
+position = Vector2(36, 36)
+shape = SubResource("RectangleShape2D_b7tfj")
+
 [node name="MostIgnoreRuleDescription" parent="FirstCollidePowerUp" instance=ExtResource("23_13noq")]
 visible = false
+
+[node name="exit_bttn_of_MIR" type="Button" parent="FirstCollidePowerUp/MostIgnoreRuleDescription"]
+process_mode = 3
+layout_mode = 0
+offset_left = 464.0
+offset_top = 375.0
+offset_right = 536.0
+offset_bottom = 447.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("24_5186w")
+
+[node name="exit_mobile" type="TouchScreenButton" parent="FirstCollidePowerUp/MostIgnoreRuleDescription/exit_bttn_of_MIR"]
+position = Vector2(36, 36)
+shape = SubResource("RectangleShape2D_b7tfj")
 
 [connection signal="pressed" from="PauseUI/Pause/PausePanel/Resume" to="PauseUI/Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseUI/Pause/PausePanel/Resume/Resume" to="PauseUI/Pause" method="_on_resume_pressed"]
@@ -212,3 +314,17 @@ visible = false
 [connection signal="pressed" from="PauseUI/Pause/PausePanel/Quit/Quit" to="PauseUI/Pause" method="_on_quit_pressed"]
 [connection signal="timeout" from="EnemySpawnpoint" to="." method="_on_enemy_spawnpoint_timeout"]
 [connection signal="pressed" from="AboutGame/gameabout" to="AboutGame" method="_on_gameabout_pressed"]
+[connection signal="pressed" from="FirstCollidePowerUp/AntiVirusDescription/exit_bttn_of_AntiVirus" to="." method="_on_exit_bttn_of_antivirus"]
+[connection signal="pressed" from="FirstCollidePowerUp/AntiVirusDescription/exit_bttn_of_AntiVirus/exit_mobile" to="." method="_on_exit_bttn_of_antivirus"]
+[connection signal="pressed" from="FirstCollidePowerUp/MedkitDescription/exit_bttn_of_Medkit" to="." method="_on_exit_bttn_of_medkit"]
+[connection signal="pressed" from="FirstCollidePowerUp/MedkitDescription/exit_bttn_of_Medkit/exit_mobile" to="." method="_on_exit_bttn_of_medkit"]
+[connection signal="pressed" from="FirstCollidePowerUp/FirewallDescription/exit_bttn_of_Firewall" to="." method="_on_exit_bttn_of_firewall"]
+[connection signal="pressed" from="FirstCollidePowerUp/FirewallDescription/exit_bttn_of_Firewall/exit_mobile" to="." method="_on_exit_bttn_of_firewall"]
+[connection signal="pressed" from="FirstCollidePowerUp/ShieldDescription/exit_bttn_of_EShields" to="." method="_on_exit_bttn_of_eShields"]
+[connection signal="pressed" from="FirstCollidePowerUp/ShieldDescription/exit_bttn_of_EShields/exit_mobile" to="." method="_on_exit_bttn_of_eShields"]
+[connection signal="pressed" from="FirstCollidePowerUp/PassRocketsDescription/exit_bttn_of_PassRockets" to="." method="_on_exit_bttn_of_passrockets"]
+[connection signal="pressed" from="FirstCollidePowerUp/PassRocketsDescription/exit_bttn_of_PassRockets/exit_mobile" to="." method="_on_exit_bttn_of_passrockets"]
+[connection signal="pressed" from="FirstCollidePowerUp/DPBDescription/exit_bttn_of_DPB" to="." method="_on_exit_bttn_of_dpb_pressed"]
+[connection signal="pressed" from="FirstCollidePowerUp/DPBDescription/exit_bttn_of_DPB/exit_mobile" to="." method="_on_exit_bttn_of_dpb_pressed"]
+[connection signal="pressed" from="FirstCollidePowerUp/MostIgnoreRuleDescription/exit_bttn_of_MIR" to="." method="_on_exit_bttn_of_mir_pressed"]
+[connection signal="pressed" from="FirstCollidePowerUp/MostIgnoreRuleDescription/exit_bttn_of_MIR/exit_mobile" to="." method="_on_exit_bttn_of_mir_pressed"]
